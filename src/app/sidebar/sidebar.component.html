@@ -1,0 +1,53 @@
+<div class="sidebar-wrapper">
+    <div class="logo">
+        <a href="\dashboard" class="simple-text">
+            <div class="logo-img">
+                <img src="/assets/img/angular2-logo-white.png"/>
+            </div>
+            SCIEC <br> Organizador
+        </a>
+    </div>
+    <ul class="nav responsive-nav">
+        <li *ngIf="isMobileMenu()">
+            <a href="">
+                <p>Account</p>
+            </a>
+        </li>
+        <li class="dropdown" *ngIf="isMobileMenu()">
+            <a class="dropdown-toggle" data-toggle="dropdown">
+                <p>
+                    Eventos
+                    <b class="caret"></b>
+                </p>
+
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="\dashboard">Listar Eventos</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Criar Eventos</a></li>
+                <li><a href="\meus-eventos">Meus Eventos</a></li>
+            </ul>
+        </li>
+        <li class="dropdown" *ngIf="isMobileMenu()">
+            <a class="dropdown-toggle" data-toggle="dropdown">
+                <p>
+                    Nome do Organizador
+                    <b class="caret"></b>
+                </p>
+
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="\user">Meu Perfil</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Sair</a></li>
+            </ul>
+        </li>
+        <li class="separator hidden-lg hidden-md" *ngIf="isMobileMenu()"></li>
+        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}}">
+            <a [routerLink]="[menuItem.path]">
+                <i class="{{menuItem.icon}}"></i>
+                <p>{{menuItem.title}}</p>
+            </a>
+        </li>
+    </ul>
+</div>
