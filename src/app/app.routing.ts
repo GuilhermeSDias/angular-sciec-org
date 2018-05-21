@@ -14,6 +14,9 @@ import { UpgradeComponent } from './upgrade/upgrade.component';
 import {ControleFrequenciaComponent} from "./controle-frequencia/controle-frequencia.component";
 import {MeusEventosComponent} from "./meus-eventos/meus-eventos.component";
 import {CadEventoComponent} from "./cad-evento/cad-evento.component";
+import {LoginComponent} from "./user/autentication/login/login.component";
+import {RegisterComponent} from "./user/autentication/register/register.component";
+import {RecoverPasswordComponent} from "./user/autentication/recover-password/recover-password.component";
 
 const routes: Routes =[
     { path: 'dashboard',      component: HomeComponent },
@@ -27,6 +30,9 @@ const routes: Routes =[
     { path: 'frequencia',        component: ControleFrequenciaComponent },
     { path: 'meus-eventos',        component: MeusEventosComponent },
     { path: 'cad-evento',        component: CadEventoComponent },
+    { path: 'login',        component: LoginComponent },
+    { path: 'register',        component: RegisterComponent },
+    { path: 'recover-password',        component: RecoverPasswordComponent },
       { path: '',          redirectTo: 'dashboard', pathMatch: 'full' }
 ];
 
