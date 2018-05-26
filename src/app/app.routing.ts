@@ -3,7 +3,7 @@ import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './evento/home.component';
 import { UserComponent } from './user/user.component';
 import { TablesComponent } from './tables/tables.component';
 import { TypographyComponent } from './typography/typography.component';
@@ -11,12 +11,13 @@ import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
-import {ControleFrequenciaComponent} from "./controle-frequencia/controle-frequencia.component";
-import {MeusEventosComponent} from "./meus-eventos/meus-eventos.component";
-import {CadEventoComponent} from "./cad-evento/cad-evento.component";
+import {ControleFrequenciaComponent} from "./evento/controle-frequencia/controle-frequencia.component";
+import {MeusEventosComponent} from "./evento/meus-eventos/meus-eventos.component";
+import {CadEventoComponent} from "./evento/cad-evento/cad-evento.component";
 import {LoginComponent} from "./user/autentication/login/login.component";
 import {RegisterComponent} from "./user/autentication/register/register.component";
 import {RecoverPasswordComponent} from "./user/autentication/recover-password/recover-password.component";
+import {DetalhesEventoComponent} from "./evento/detalhes-evento/detalhes-evento.component";
 
 const routes: Routes =[
     { path: 'dashboard',      component: HomeComponent },
@@ -30,6 +31,7 @@ const routes: Routes =[
     { path: 'frequencia',        component: ControleFrequenciaComponent },
     { path: 'meus-eventos',        component: MeusEventosComponent },
     { path: 'cad-evento',        component: CadEventoComponent },
+    { path: 'detalhes-evento',        component: DetalhesEventoComponent },
     { path: 'login',        component: LoginComponent },
     { path: 'register',        component: RegisterComponent },
     { path: 'recover-password',        component: RecoverPasswordComponent },
