@@ -12,7 +12,7 @@ import { LbdModule } from './lbd/lbd.module';
 
 import { AppComponent } from './app.component';
 
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './evento/home.component';
 import { UserComponent } from './user/user.component';
 import { TablesComponent } from './tables/tables.component';
 import { TypographyComponent } from './typography/typography.component';
@@ -20,12 +20,13 @@ import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
-import { ControleFrequenciaComponent } from './controle-frequencia/controle-frequencia.component';
-import { MeusEventosComponent } from './meus-eventos/meus-eventos.component';
-import { CadEventoComponent } from './cad-evento/cad-evento.component';
+import { ControleFrequenciaComponent } from './evento/controle-frequencia/controle-frequencia.component';
+import { MeusEventosComponent } from './evento/meus-eventos/meus-eventos.component';
+import { CadEventoComponent } from './evento/cad-evento/cad-evento.component';
 import { LoginComponent } from './user/autentication/login/login.component';
 import { RegisterComponent } from './user/autentication/register/register.component';
 import { RecoverPasswordComponent } from './user/autentication/recover-password/recover-password.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -55,9 +56,10 @@ import { RecoverPasswordComponent } from './user/autentication/recover-password/
     SidebarModule,
     RouterModule,
     AppRoutingModule,
-    LbdModule
+    LbdModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
