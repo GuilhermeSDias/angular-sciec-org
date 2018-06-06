@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
+import {Endereco} from "./endereco.model";
 
 
 @Component({
@@ -13,8 +14,9 @@ import 'rxjs/add/operator/map';
 export class AppComponent implements OnInit {
     /*private apiUrl = 'http://ip.jsontest.com/';*/
     /*private apiUrl = 'http://address-book-demo.herokuapp.com/api/contacts';*/
-    private apiUrl = 'https://api.github.com/users/seeschweiler';
+    private apiUrl = 'https://viacep.com.br/ws/01001000/json/';
     data: any = {};
+
 
 
     constructor(private http: Http) {
@@ -31,7 +33,7 @@ export class AppComponent implements OnInit {
 
         this.getData().subscribe(data => {
            console.log(data);
-           this.data = data
+           this.data = data;
         });
     }
 

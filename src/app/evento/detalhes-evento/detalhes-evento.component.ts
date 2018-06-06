@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Http, Response, Headers} from '@angular/http';
+
 
 @Component({
   selector: 'app-detalhes-evento',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetalhesEventoComponent implements OnInit {
 
-  constructor() { }
+    constructor(private http: Http) { }
+
+    address = [];
+    fetchData = function() {
+        this.http.get("https://viacep.com.br/ws/01001000/json/").subscribe(
+            (res: Response) => {
+              this.address = res.json();
+
+            }
+        )
+    }
 
   ngOnInit() {
+      this.fetchData;
   }
 
 }
