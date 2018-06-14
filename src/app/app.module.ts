@@ -26,7 +26,6 @@ import { CadEventoComponent } from './evento/cad-evento/cad-evento.component';
 import { LoginComponent } from './user/autentication/login/login.component';
 import { RegisterComponent } from './user/autentication/register/register.component';
 import { RecoverPasswordComponent } from './user/autentication/recover-password/recover-password.component';
-import { HttpClientModule } from '@angular/common/http';
 import { DetalhesEventoComponent } from './evento/detalhes-evento/detalhes-evento.component';
 
 @NgModule({
@@ -59,9 +58,8 @@ import { DetalhesEventoComponent } from './evento/detalhes-evento/detalhes-event
     RouterModule,
     AppRoutingModule,
     LbdModule,
-    HttpClientModule
   ],
-  providers: [AppComponent],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

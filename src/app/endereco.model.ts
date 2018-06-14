@@ -5,5 +5,4 @@ export interface Endereco {
     complemento: any;
     bairro: any;
 
-
 }

@@ -7,7 +7,7 @@
                         <h4 class="title">Cadastro de Eventos</h4>
                     </div>
                     <div class="content">
-                        <form action="#" method="post">
+                        <form id = "formNewEvent" name = "formNewEvent" #eventData = "ngForm" (ngSubmit) = "addNewEvent(eventData.value)">
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col s6">
@@ -35,68 +35,34 @@
                                                     <div class="row">
                                                         <div class="input-field col s12">
                                                             <i class="material-icons prefix">event</i>
-                                                            <input id="icon_prefix" type="text" class="validate">
+                                                            <input id="icon_prefix" type="text" class="validate" ngModel>
                                                             <label for="icon_prefix">Nome</label>
                                                         </div>
                                                         <div class="input-field col s12">
                                                             <i class="material-icons prefix">description</i>
-                                                            <input id="icon_description" type="text" class="validate">
+                                                            <input id="icon_description" type="text" class="validate" ngModel>
                                                             <label for="icon_description">Descrição</label>
                                                         </div>
                                                         <div class="input-field col s12">
                                                             <i class="material-icons prefix">location_on</i>
-                                                            <input id="icon_local" type="tel" class="validate">
+                                                            <input id="icon_local" type="tel" class="validate" ngModel>
                                                             <label for="icon_local">Local</label>
                                                         </div>
                                                         <div class="col s6">
                                                             <i class="material-icons left">today</i><label for="icon_dt-conclusao">Data de Inicio</label>
-                                                            <input id="icon_dt-inicio" type="datetime-local" class="validate">
+                                                            <input id="icon_dt-inicio" type="datetime-local" class="validate" ngModel>
                                                         </div>
                                                         <div class="col s6">
                                                             <i class="material-icons left">today</i><label for="icon_dt-conclusao">Data de Conclusão</label>
-                                                            <input id="icon_dt-conclusao" type="datetime-local" class="validate">
+                                                            <input id="icon_dt-conclusao" type="datetime-local" class="validate" ngModel>
                                                         </div>
                                                     </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!--<div class="row">
-                                    <div class="card" style="width: auto">
-                                        <div class="col s6 ms 13">
-                                            <div class="card" style="width: auto">
-                                                <div class="col s6">
-                                                    <input class="checkbox-circle" id="checkbox1" type="checkbox">
-                                                    <label for="checkbox1">Atividade 01</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col s6 m6 13">
-                                            <a class="waves-effect waves-light btn blue"><i class="material-icons black-text">edit</i></a>
-                                            <a class="waves-effect waves-light btn green"><i class="material-icons black-text">add</i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="card" style="width: auto">
-                                        <div class="col s6 ms 13">
-                                            <div class="card" style="width: auto">
-                                                <div class="col s6">
-                                                    <input class="checkbox-circle" id="checkbox2" type="checkbox">
-                                                    <label for="checkbox2">Atividade 02</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col s6">
-                                            <a class="waves-effect waves-light btn blue"><i class="material-icons black-text">edit</i></a>
-                                            <a class="waves-effect waves-light btn green"><i class="material-icons black-text">add</i></a>
-                                        </div>
-                                    </div>
-                                </div>-->
                             </div>
                             <div class="col s12 text-right">
-                                <!--<a class="waves-effect waves-light btn red"><i class="material-icons black-text">keyboard_backspace</i></a>
-                                <a class="waves-effect waves-light btn green"><i class="material-icons black-text">check</i></a>-->
                                 <input type="submit" class="waves-effect waves-light btn green" value="Cadastrar">
                             </div>
                         </div>

@@ -10,19 +10,40 @@ import {Http, Response, Headers} from '@angular/http';
 export class DetalhesEventoComponent implements OnInit {
 
     constructor(private http: Http) { }
+    dteventObj: object = {};
 
-    address = [];
+    dtevents;
     fetchData = function() {
-        this.http.get("https://viacep.com.br/ws/01001000/json/").subscribe(
+        this.http.get('http://sciec.test/admin/event/index/').subscribe(
             (res: Response) => {
-              this.address = res.json();
-
+                this.dtevents = res.json();
+                console.log(this.dtevents.data);
             }
-        )
-    }
+
+        );
+
+    };
+
+
+    addNewDtEvent = function(dtevent) {
+        this.dteventObj = {
+            'nome': dtevent.nome,
+            'descricao': dtevent.descricao,
+            'local': dtevent.local,
+            'data_inicio': dtevent.data_inicio,
+            'data_conclusao': dtevent.data_conclusao,
+            'situacao': dtevent.situacao,
+            'status': dtevent.status,
+            'coordenador': dtevent.coordenador,
+        };
+        this.http.post('http://sciec.test/admin/event/store', this.dteventObj).subscribe((res: Response) => {
+            console.log(res);
+            this.fetchData();
+        });
+    };
 
   ngOnInit() {
-      this.fetchData;
+      this.fetchData();
   }
 
 }
