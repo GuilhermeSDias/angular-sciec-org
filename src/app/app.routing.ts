@@ -19,6 +19,9 @@ import {RegisterComponent} from "./user/autentication/register/register.componen
 import {RecoverPasswordComponent} from "./user/autentication/recover-password/recover-password.component";
 import {DetalhesEventoComponent} from "./evento/detalhes-evento/detalhes-evento.component";
 
+import {AtividadeComponent} from "./evento/atividade/atividade.component";
+import {CadAtividadeComponent} from "./evento/atividade/cad-atividade/cad-atividade.component";
+
 const routes: Routes =[
     { path: 'dashboard',      component: HomeComponent },
     { path: 'user',           component: UserComponent },
@@ -31,6 +34,8 @@ const routes: Routes =[
     { path: 'frequencia',        component: ControleFrequenciaComponent },
     { path: 'meus-eventos',        component: MeusEventosComponent },
     { path: 'cad-evento',        component: CadEventoComponent },
+    { path: 'atividade',        component: AtividadeComponent },
+    { path: 'cad-atividade',        component: CadAtividadeComponent },
     { path: 'detalhes-evento',        component: DetalhesEventoComponent },
     { path: 'login',        component: LoginComponent },
     { path: 'register',        component: RegisterComponent },
