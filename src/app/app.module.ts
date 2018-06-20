@@ -27,6 +27,8 @@ import { LoginComponent } from './user/autentication/login/login.component';
 import { RegisterComponent } from './user/autentication/register/register.component';
 import { RecoverPasswordComponent } from './user/autentication/recover-password/recover-password.component';
 import { DetalhesEventoComponent } from './evento/detalhes-evento/detalhes-evento.component';
+import { AtividadeComponent } from './evento/atividade/atividade.component';
+import { CadAtividadeComponent } from './evento/atividade/cad-atividade/cad-atividade.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,8 @@ import { DetalhesEventoComponent } from './evento/detalhes-evento/detalhes-event
     RegisterComponent,
     RecoverPasswordComponent,
     DetalhesEventoComponent,
+    AtividadeComponent,
+    CadAtividadeComponent,
 
   ],
   imports: [
