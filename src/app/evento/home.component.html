@@ -10,11 +10,8 @@
                     <div class="content">
                         <div class="row">
                             <div class="col-md-4" *ngFor="let event of events.data">
-                                <div class="card" style="width: auto">
+                                <div class="card" style="width: 18em">
                                     <div class="h4 text-center">{{event.nome}}</div>
-                                    <div class="card-image">
-                                        <img src="../../assets/img/angular-red.png" style="width: 18em">
-                                    </div>
                                     <a href="detalhes-evento" class="waves-effect waves-light btn green col s12" *ngIf="events.data"><i
                                             class="material-icons left">event</i>Ver
                                         Evento</a>

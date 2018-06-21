@@ -1,33 +1,19 @@
 import { NgModule } from '@angular/core';
-import { CommonModule, } from '@angular/common';
-import { BrowserModule  } from '@angular/platform-browser';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 import { HomeComponent } from './evento/home.component';
 import { UserComponent } from './user/user.component';
-import { TablesComponent } from './tables/tables.component';
-import { TypographyComponent } from './typography/typography.component';
-import { IconsComponent } from './icons/icons.component';
-import { MapsComponent } from './maps/maps.component';
-import { NotificationsComponent } from './notifications/notifications.component';
-import { UpgradeComponent } from './upgrade/upgrade.component';
 import {ControleFrequenciaComponent} from "./evento/controle-frequencia/controle-frequencia.component";
 import {MeusEventosComponent} from "./evento/meus-eventos/meus-eventos.component";
 import {CadEventoComponent} from "./evento/cad-evento/cad-evento.component";
-import {LoginComponent} from "./user/autentication/login/login.component";
-import {RegisterComponent} from "./user/autentication/register/register.component";
-import {RecoverPasswordComponent} from "./user/autentication/recover-password/recover-password.component";
+import {LoginComponent} from "./user/auth/login/login.component";
+import {RegisterComponent} from "./user/auth/register/register.component";
+import {RecoverPasswordComponent} from "./user/auth/recover-password/recover-password.component";
 import {DetalhesEventoComponent} from "./evento/detalhes-evento/detalhes-evento.component";
 
-const routes: Routes =[
+/*const routes: Routes =[
     { path: 'dashboard',      component: HomeComponent },
     { path: 'user',           component: UserComponent },
-    { path: 'table',          component: TablesComponent },
-    { path: 'typography',     component: TypographyComponent },
-    { path: 'icons',          component: IconsComponent },
-    { path: 'maps',           component: MapsComponent },
-    { path: 'notifications',  component: NotificationsComponent },
-    { path: 'upgrade',        component: UpgradeComponent },
     { path: 'frequencia',        component: ControleFrequenciaComponent },
     { path: 'meus-eventos',        component: MeusEventosComponent },
     { path: 'cad-evento',        component: CadEventoComponent },
@@ -36,15 +22,26 @@ const routes: Routes =[
     { path: 'register',        component: RegisterComponent },
     { path: 'recover-password',        component: RecoverPasswordComponent },
       { path: '',          redirectTo: 'dashboard', pathMatch: 'full' }
-];
+];*/
 
 @NgModule({
-  imports: [
-    CommonModule,
-    BrowserModule,
-    RouterModule.forRoot(routes)
-  ],
-  exports: [
-  ],
+    imports: [
+        RouterModule.forRoot([
+            { path: '', redirectTo: 'dasborad', pathMatch: 'full' },
+            { path: 'auth/login', component: LoginComponent },
+            { path: 'auth/register',        component: RegisterComponent },
+            { path: 'auth/recover-password',        component: RecoverPasswordComponent },
+
+            { path: 'dashboard',      component: HomeComponent },
+            { path: 'user',           component: UserComponent },
+            { path: 'frequencia',        component: ControleFrequenciaComponent },
+            { path: 'meus-eventos',        component: MeusEventosComponent },
+            { path: 'cad-evento',        component: CadEventoComponent },
+            { path: 'detalhes-evento',        component: DetalhesEventoComponent },
+
+        ])
+    ],
+    declarations: [],
+    exports: [ RouterModule]
 })
 export class AppRoutingModule { }
