@@ -10,6 +10,8 @@ import {LoginComponent} from "./user/auth/login/login.component";
 import {RegisterComponent} from "./user/auth/register/register.component";
 import {RecoverPasswordComponent} from "./user/auth/recover-password/recover-password.component";
 import {DetalhesEventoComponent} from "./evento/detalhes-evento/detalhes-evento.component";
+import {AtividadeComponent} from "./evento/atividade/atividade.component";
+import {CadAtividadeComponent} from "./evento/atividade/cad-atividade/cad-atividade.component";
 
 /*const routes: Routes =[
     { path: 'dashboard',      component: HomeComponent },
@@ -38,6 +40,8 @@ import {DetalhesEventoComponent} from "./evento/detalhes-evento/detalhes-evento.
             { path: 'meus-eventos',        component: MeusEventosComponent },
             { path: 'cad-evento',        component: CadEventoComponent },
             { path: 'detalhes-evento',        component: DetalhesEventoComponent },
+            { path: 'atividade',        component: AtividadeComponent },
+            { path: 'cad-atividade',        component: CadAtividadeComponent },
 
         ])
     ],
