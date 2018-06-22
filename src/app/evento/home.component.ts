@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
     events = [];
     fetchData = function() {
 
-        this.http.get('http://sciec.test/admin/event/index').subscribe(
+        this.http.get('http://localhost:8000/admin/event/index').subscribe(
             (res: Response) => {
                 this.events = res.json();
                 console.log(this.events.data);
@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
             'status': event.status,
             'coordenador': event.coordenador,
         };
-        this.http.post('http://sciec.test/admin/event/store/', this.eventObj).subscribe((res: Response) => {
+        this.http.post('http://localhost:8000/admin/event/store/', this.eventObj).subscribe((res: Response) => {
             console.log(res);
             this.fetchData();
         });
