@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Http, Response} from "@angular/http";
+import {applyRedirects} from "@angular/router/src/apply_redirects";
 
 @Component({
   selector: 'app-cad-evento',
@@ -33,9 +34,12 @@ export class CadEventoComponent implements OnInit {
             'data_conclusao': event.data_conclusao,
             'situacao': event.situacao,
             'status': event.status,
+            'institutions_id': event.institutions_id,
             'coordenador': event.coordenador,
         };
-        this.http.post('http://sciec.test/admin/event/store/', this.eventObj).subscribe((res: Response) => {
+
+        console.log(this.eventObj);
+        this.http.post('http://sciec.test/org/event/store', this.eventObj).subscribe((res: Response) => {
             console.log(res);
             this.fetchData();
         });

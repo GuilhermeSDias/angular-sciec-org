@@ -24,7 +24,6 @@ export class DetalhesEventoComponent implements OnInit {
 
     };
 
-
     addNewDtEvent = function(dtevent) {
         this.dteventObj = {
             'nome': dtevent.nome,

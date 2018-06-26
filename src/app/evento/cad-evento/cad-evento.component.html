@@ -6,67 +6,78 @@
                     <div class="header">
                         <h4 class="title">Cadastro de Eventos</h4>
                     </div>
-                    <div class="content">
-                        <form id = "formNewEvent" name = "formNewEvent" #eventData = "ngForm" (ngSubmit) = "addNewEvent(eventData.value)">
+                    <div class="panel-body">
+                        <form id = "formNewEvent" name = "formNewEvent" #productData = "ngForm" (ngSubmit) = "addNewEvent(productData.value)">
                         <div class="container-fluid">
                             <div class="row">
-                                <div class="col s6">
-                                    <div class="card" style="width: auto">
-                                        <div class="card-image">
-                                            <p class="text-center">Logo do Evento.</p>
-                                            <img src="../../../assets/img/angular2-logo-white.png" style="width: auto">
-                                        </div>
-                                        <div class="file-field input-field">
-                                            <div class="btn blue">
-                                                <i class="material-icons left">file_upload</i>
-                                                <span>Upload Banner</span>
-                                                <input type="file">
-                                            </div>
-                                            <div class="file-path-wrapper">
-                                                <input class="file-path validate" type="text">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col s6">
-                                    <div class="card" style="width: auto">
+                                <div class="col s12">
                                         <div class="card" style="height: auto">
-                                            <div class="row">
                                                     <div class="row">
                                                         <div class="input-field col s12">
                                                             <i class="material-icons prefix">event</i>
-                                                            <input id="icon_prefix" type="text" class="validate" ngModel>
+                                                            <input id="icon_prefix" type="text" name="nome" class="form-control" ngModel>
                                                             <label for="icon_prefix">Nome</label>
                                                         </div>
                                                         <div class="input-field col s12">
                                                             <i class="material-icons prefix">description</i>
-                                                            <input id="icon_description" type="text" class="validate" ngModel>
+                                                            <input id="icon_description" type="text" name="descricao" class="validate" ngModel>
                                                             <label for="icon_description">Descrição</label>
                                                         </div>
                                                         <div class="input-field col s12">
                                                             <i class="material-icons prefix">location_on</i>
-                                                            <input id="icon_local" type="tel" class="validate" ngModel>
+                                                            <input id="icon_local" type="tel" name="local" class="validate" ngModel>
                                                             <label for="icon_local">Local</label>
                                                         </div>
                                                         <div class="col s6">
                                                             <i class="material-icons left">today</i><label for="icon_dt-conclusao">Data de Inicio</label>
-                                                            <input id="icon_dt-inicio" type="datetime-local" class="validate" ngModel>
+                                                            <input id="icon_dt-inicio" type="datetime-local" name="data_inicio" class="validate" ngModel>
                                                         </div>
                                                         <div class="col s6">
                                                             <i class="material-icons left">today</i><label for="icon_dt-conclusao">Data de Conclusão</label>
-                                                            <input id="icon_dt-conclusao" type="datetime-local" class="validate" ngModel>
+                                                            <input id="icon_dt-conclusao" type="datetime-local" name="data_conclusao" class="validate" ngModel>
+                                                        </div>
+                                                        <div class="col s6">
+                                                            <i class="material-icons left">info</i><label for="icon_situacao">Situação</label>
+                                                            <input id="icon_situacao" type="text" name="situacao" class="validate" ngModel>
+                                                        </div>
+                                                        <div class="col s6">
+                                                            <i class="material-icons left">priority_high</i><label for="icon_status">Status</label>
+                                                            <input id="icon_status" type="text" name="status" class="validate" ngModel>
+                                                        </div>
+                                                        <div class="input-field col s12">
+                                                            <i class="material-icons prefix">school</i>
+                                                            <input id="icon_institutions" type="text" name="institutions_id" class="validate" ngModel>
+                                                            <label for="icon_institutions">Instituição</label>
+                                                        </div>
+                                                        <div class="input-field col s12">
+                                                            <i class="material-icons prefix">person</i>
+                                                            <input id="icon_coordenador" type="text" name="coordenador" class="validate" ngModel>
+                                                            <label for="icon_coordenador">Coordenador</label>
                                                         </div>
                                                     </div>
-                                            </div>
                                         </div>
-                                    </div>
                                 </div>
                             </div>
                             <div class="col s12 text-right">
-                                <input type="submit" routerLink="/cad-atividade" class="waves-effect waves-light btn green" value="Cadastrar">
+                                <input type="submit" class="waves-effect waves-light btn green" value="Cadastrar">
                             </div>
                         </div>
                         </form>
+
+                        <!--<form id = "formNewEvent" name = "formNewEvent" #productData = "ngForm" (ngSubmit) = "addNewEvent(productData.value)">
+                            <label>Nome: </label><input type = "text" name="nome" id="nome" placeholder="nome" ngModel><br>
+                            <label>Descrição: </label><input type = "text" name="descricao" id="descricao" placeholder="descricao" ngModel><br>
+                            <label>Local: </label><input type = "text" name="local" id="local" placeholder="Local" ngModel><br>
+                            <label>Data de Início: </label><input type = "datetime-local" name="data_inicio" id="data_inicio" placeholder="Data de Início" ngModel><br>
+                            <label>Data de Conclusão: </label><input type = "datetime-local" name="data_conclusao" id="data_conclusao" placeholder="Data de Conclusão" ngModel><br>
+                            <label>Situação: </label><input type = "text" name="situacao" id="situacao" placeholder="Situação" ngModel><br>
+                            <label>Status: </label><input type = "text" name="status" id="status" placeholder="Status" ngModel><br>
+                            <label>Instituição: </label><input type = "text" name="institutions_id" id="institutions" placeholder="Instituição" ngModel><br>
+                            <label>Coordenador: </label><input type = "text" name="coordenador" id="coordenador" placeholder="Coordenador" ngModel><br>
+
+                            <input type="submit" value = "Add Event">
+                        </form>-->
+
                     </div>
                 </div>
             </div>

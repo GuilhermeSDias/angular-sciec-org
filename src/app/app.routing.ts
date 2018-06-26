@@ -13,23 +13,10 @@ import {DetalhesEventoComponent} from "./evento/detalhes-evento/detalhes-evento.
 import {AtividadeComponent} from "./evento/atividade/atividade.component";
 import {CadAtividadeComponent} from "./evento/atividade/cad-atividade/cad-atividade.component";
 
-/*const routes: Routes =[
-    { path: 'dashboard',      component: HomeComponent },
-    { path: 'user',           component: UserComponent },
-    { path: 'frequencia',        component: ControleFrequenciaComponent },
-    { path: 'meus-eventos',        component: MeusEventosComponent },
-    { path: 'cad-evento',        component: CadEventoComponent },
-    { path: 'detalhes-evento',        component: DetalhesEventoComponent },
-    { path: 'login',        component: LoginComponent },
-    { path: 'register',        component: RegisterComponent },
-    { path: 'recover-password',        component: RecoverPasswordComponent },
-      { path: '',          redirectTo: 'dashboard', pathMatch: 'full' }
-];*/
 
 @NgModule({
     imports: [
         RouterModule.forRoot([
-            { path: '', redirectTo: 'dasborad', pathMatch: 'full' },
             { path: 'auth/login', component: LoginComponent },
             { path: 'auth/register',        component: RegisterComponent },
             { path: 'auth/recover-password',        component: RecoverPasswordComponent },
@@ -42,6 +29,7 @@ import {CadAtividadeComponent} from "./evento/atividade/cad-atividade/cad-ativid
             { path: 'detalhes-evento',        component: DetalhesEventoComponent },
             { path: 'atividade',        component: AtividadeComponent },
             { path: 'cad-atividade',        component: CadAtividadeComponent },
+            { path: '',          redirectTo: 'dashboard', pathMatch: 'full' }
 
         ])
     ],
