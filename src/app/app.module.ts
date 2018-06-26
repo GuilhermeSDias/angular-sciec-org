@@ -24,6 +24,10 @@ import { RecoverPasswordComponent } from './user/auth/recover-password/recover-p
 import { DetalhesEventoComponent } from './evento/detalhes-evento/detalhes-evento.component';
 import { AtividadeComponent } from './evento/atividade/atividade.component';
 import { CadAtividadeComponent } from './evento/atividade/cad-atividade/cad-atividade.component';
+import {AuthGuard} from "./guards/auth.guard";
+import {TokenInterceptor} from "./interceptors/token.interceptor";
+import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import {RefreshTokenInterceptor} from "./interceptors/refresh-token.interceptor";
 
 @NgModule({
   declarations: [
@@ -53,7 +57,13 @@ import { CadAtividadeComponent } from './evento/atividade/cad-atividade/cad-ativ
     CommonModule,
     AuthModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+      AuthGuard,
+      {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+      /*{provide: HTTP_INTERCEPTORS, useClass: RefreshTokenInterceptor, multi: true }*/
+  ],
+  bootstrap: [
+      AppComponent
+  ]
 })
 export class AppModule { }

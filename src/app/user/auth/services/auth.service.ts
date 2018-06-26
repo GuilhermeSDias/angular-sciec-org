@@ -3,11 +3,15 @@ import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../../environments/environment";
 import {Observable} from "rxjs/Observable";
 import "rxjs/add/operator/do";
+import {Router} from "@angular/router";
+import {User} from "../interface/user";
 
 @Injectable()
 export class AuthService {
 
-    constructor(private http: HttpClient) { }
+    constructor(
+        private http: HttpClient,
+        private router: Router) { }
 
     check (): boolean {
       return localStorage.getItem('user') ? true : false;
@@ -18,6 +22,29 @@ export class AuthService {
             .do(data => {
                 localStorage.setItem('token', data.token);
                 localStorage.setItem('user', btoa(JSON.stringify(data.user)));
+            });
+    }
+
+    logout(): void {
+        this.http.get(`${environment.api_url}/auth/logout`).subscribe(resp => {
+            console.log(resp);
+            localStorage.clear();
+            this.router.navigate(['auth/login']);
+        });
+    }
+
+    getUser(): User{
+        return localStorage.getItem('user') ? JSON.parse(atob(localStorage.getItem('user'))) : null;
+    }
+
+    setUser(): Promise<boolean> {
+        return this.http.get<any>(`${environment.api_url}/auth/me`).toPromise()
+            .then(data => {
+                if (data.user) {
+                    localStorage.setItem('user', btoa(JSON.stringify(data.user)));
+                    return true;
+                }
+                return false;
             });
     }
 }

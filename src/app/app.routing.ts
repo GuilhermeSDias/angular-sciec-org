@@ -12,6 +12,7 @@ import {RecoverPasswordComponent} from "./user/auth/recover-password/recover-pas
 import {DetalhesEventoComponent} from "./evento/detalhes-evento/detalhes-evento.component";
 import {AtividadeComponent} from "./evento/atividade/atividade.component";
 import {CadAtividadeComponent} from "./evento/atividade/cad-atividade/cad-atividade.component";
+import {AuthGuard} from "./guards/auth.guard";
 
 
 @NgModule({
@@ -21,15 +22,15 @@ import {CadAtividadeComponent} from "./evento/atividade/cad-atividade/cad-ativid
             { path: 'auth/register',        component: RegisterComponent },
             { path: 'auth/recover-password',        component: RecoverPasswordComponent },
 
-            { path: 'dashboard',      component: HomeComponent },
-            { path: 'user',           component: UserComponent },
-            { path: 'frequencia',        component: ControleFrequenciaComponent },
-            { path: 'meus-eventos',        component: MeusEventosComponent },
-            { path: 'cad-evento',        component: CadEventoComponent },
-            { path: 'detalhes-evento',        component: DetalhesEventoComponent },
-            { path: 'atividade',        component: AtividadeComponent },
-            { path: 'cad-atividade',        component: CadAtividadeComponent },
-            { path: '',          redirectTo: 'dashboard', pathMatch: 'full' }
+            { path: 'dashboard',      component: HomeComponent, canActivate: [AuthGuard]},
+            { path: 'user',           component: UserComponent, canActivate: [AuthGuard]},
+            { path: 'frequencia',        component: ControleFrequenciaComponent, canActivate: [AuthGuard] },
+            { path: 'meus-eventos',        component: MeusEventosComponent, canActivate: [AuthGuard] },
+            { path: 'cad-evento',        component: CadEventoComponent, canActivate: [AuthGuard] },
+            { path: 'detalhes-evento',        component: DetalhesEventoComponent, canActivate: [AuthGuard] },
+            { path: 'atividade',        component: AtividadeComponent, canActivate: [AuthGuard] },
+            { path: 'cad-atividade',        component: CadAtividadeComponent, canActivate: [AuthGuard] },
+            { path: '',          redirectTo: 'dashboard', pathMatch: 'full', canActivate: [AuthGuard] }
 
         ])
     ],
