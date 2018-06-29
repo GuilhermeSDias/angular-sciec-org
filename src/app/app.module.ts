@@ -60,7 +60,7 @@ import {RefreshTokenInterceptor} from "./interceptors/refresh-token.interceptor"
   providers: [
       AuthGuard,
       {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
-      /*{provide: HTTP_INTERCEPTORS, useClass: RefreshTokenInterceptor, multi: true }*/
+      {provide: HTTP_INTERCEPTORS, useClass: RefreshTokenInterceptor, multi: true }
   ],
   bootstrap: [
       AppComponent

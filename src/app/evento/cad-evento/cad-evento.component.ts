@@ -38,10 +38,10 @@ export class CadEventoComponent implements OnInit {
             'coordenador': event.coordenador,
         };
 
-        console.log(this.eventObj);
         this.http.post('http://sciec.test/org/event/store', this.eventObj).subscribe((res: Response) => {
             console.log(res);
             this.fetchData();
+            this.router.navigate(['auth/login']);
         });
     };
 

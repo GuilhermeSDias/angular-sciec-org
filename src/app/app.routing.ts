@@ -20,7 +20,7 @@ import {AuthGuard} from "./guards/auth.guard";
         RouterModule.forRoot([
             { path: 'auth/login', component: LoginComponent },
             { path: 'auth/register',        component: RegisterComponent },
-            { path: 'auth/recover-password',        component: RecoverPasswordComponent },
+            { path: 'password/reset',        component: RecoverPasswordComponent },
 
             { path: 'dashboard',      component: HomeComponent, canActivate: [AuthGuard]},
             { path: 'user',           component: UserComponent, canActivate: [AuthGuard]},

@@ -12,29 +12,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Nome</label>
-                                        <input type="text" class="form-control" placeholder="nome" value="michael23">
+                                        <input type="text" class="form-control" placeholder="nome" value="{{user?.name}}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Email</label>
+                                        <label >Email</label>
                                         <input type="email" class="form-control" placeholder="Email"
-                                               value="mkandrew@email.com">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Nome</label>
-                                        <input type="text" class="form-control" placeholder="Company" value="Mike">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Sobrenome</label>
-                                        <input type="text" class="form-control" placeholder="Last Name" value="Andrew">
+                                               value="{{user?.email}}">
                                     </div>
                                 </div>
                             </div>
@@ -43,20 +28,14 @@
                                     <div class="form-group">
                                         <label>CPF</label>
                                         <input type="cpf" class="form-control" placeholder="123.456.789-12"
-                                               value="123.456.789-12">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Senha</label>
-                                        <input type="password" class="form-control" placeholder="senha">
+                                               value="{{user?.cpf}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Celular</label>
                                         <input type="phone" class="form-control" placeholder="(63)12345678"
-                                               value="(63)12345678">
+                                               value="{{user?.celular}}">
                                     </div>
                                 </div>
                             </div>
