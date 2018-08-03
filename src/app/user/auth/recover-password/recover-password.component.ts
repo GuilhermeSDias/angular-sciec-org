@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Http, Response} from "@angular/http";
 
 @Component({
   selector: 'app-recover-password',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecoverPasswordComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: Http) { }
+    resetObj: object = {};
 
-  ngOnInit() {
-  }
+    resetPassword = function(user) {
+        this.resetObj = {
+            'email': user.email,
+
+
+        };
+
+        this.http.post('http://sciec.test/password/email', this.resetObj).subscribe((res: Response) => {
+            console.log(res);
+        });
+    };
+
+
+    ngOnInit() {
+
+
+    }
 
 }
