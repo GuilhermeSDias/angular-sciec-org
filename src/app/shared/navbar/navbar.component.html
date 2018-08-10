@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
             </button>
         </div>
-        <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse" *ngIf="auth.check()">
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <i class="material-icons grey-text">check_circle</i>
@@ -38,7 +38,7 @@
                 <li>
                     <i class="material-icons grey-text">account_circle</i>
                 </li>
-                <li class="dropdown">
+                <li class="dropdown" *ngIf="auth.check()">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <p>
                             {{auth.getUser().name}}
@@ -50,6 +50,21 @@
                         <li class="divider"></li>
                         <li><a href="#" (click)="logout($event)">Sair</a></li>
                     </ul>
+                </li>
+                <li *ngIf="!auth.check()">
+                    <a href="auth/login">
+                            <b>Login</b>
+                    </a>
+                </li>
+                <li class="separator hidden-lg hidden-md"></li>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse" *ngIf="!auth.check()">
+            <ul class="nav navbar-nav navbar-right">
+                <li *ngIf="!auth.check()">
+                    <a href="auth/login">
+                        <b>Login</b>
+                    </a>
                 </li>
                 <li class="separator hidden-lg hidden-md"></li>
             </ul>

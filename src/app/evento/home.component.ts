@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Http, Response} from "@angular/http";
 import {getResponseURL} from "@angular/http/src/http_utils";
+import {HttpErrorResponse} from "@angular/common/http";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -9,17 +11,25 @@ import {getResponseURL} from "@angular/http/src/http_utils";
 })
 export class HomeComponent implements OnInit {
     isLoggedIn = true;
+    errorCredentiasl = false;
 
-    constructor(private http: Http) { }
+    constructor(
+        private http: Http,
+    ) { }
     eventObj: object = {};
 
     events = [];
-    fetchData = function() {
+    listEvents = function() {
 
-        this.http.get('http://sciec.test/admin/event/index').subscribe(
+        this.http.get('http://sciec.test/org/event/index').subscribe(
             (res: Response) => {
                 this.events = res.json();
                 console.log(this.events.data);
+            },
+            (errorResponse: HttpErrorResponse) => {
+                if (errorResponse.status === 500) {
+                    this.errorCredentiasl = true;
+                }
             }
 
         );
@@ -37,15 +47,13 @@ export class HomeComponent implements OnInit {
             'status': event.status,
             'coordenador': event.coordenador,
         };
-        this.http.post('http://sciec.test/admin/event/store/', this.eventObj).subscribe((res: Response) => {
+        this.http.post('http://sciec.test/org/event/store/', this.eventObj).subscribe((res: Response) => {
             console.log(res);
-            this.fetchData();
+            this.listEvents();
         });
     };
 
   ngOnInit() {
-      this.fetchData();
-
+      this.listEvents();
     }
-
 }

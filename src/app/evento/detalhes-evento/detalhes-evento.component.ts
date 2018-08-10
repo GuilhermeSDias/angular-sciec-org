@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Http, Response, Headers} from '@angular/http';
-
+import {HomeComponent} from "../home.component";
+import {ActivatedRoute} from "@angular/router";
+import {query} from "@angular/core/src/animation/dsl";
 
 @Component({
   selector: 'app-detalhes-evento',
@@ -9,12 +11,17 @@ import {Http, Response, Headers} from '@angular/http';
 })
 export class DetalhesEventoComponent implements OnInit {
 
-    constructor(private http: Http) { }
+    constructor(
+        private http: Http,
+    ) { }
     dteventObj: object = {};
 
+
     dtevents;
+
+
     fetchData = function() {
-        this.http.get('http://sciec.test/admin/event/index/').subscribe(
+        this.http.get('http://sciec.test/org/event/show/1').subscribe(
             (res: Response) => {
                 this.dtevents = res.json();
                 console.log(this.dtevents.data);
@@ -35,7 +42,7 @@ export class DetalhesEventoComponent implements OnInit {
             'status': dtevent.status,
             'coordenador': dtevent.coordenador,
         };
-        this.http.post('http://sciec.test/admin/event/store', this.dteventObj).subscribe((res: Response) => {
+        this.http.post('http://sciec.test/org/event/store', this.dteventObj).subscribe((res: Response) => {
             console.log(res);
             this.fetchData();
         });

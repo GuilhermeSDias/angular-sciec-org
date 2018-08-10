@@ -7,7 +7,7 @@
             SCIEC <br> Organizador
         </a>
     </div>
-    <ul class="nav responsive-nav">
+    <ul class="nav responsive-nav" *ngIf="auth.check()">
         <li *ngIf="isMobileMenu()">
             <a href="">
                 <p>Validar Certificado</p>
@@ -28,7 +28,7 @@
                 <li><a href="\meus-eventos">Meus Eventos</a></li>
             </ul>
         </li>
-        <li class="dropdown" *ngIf="isMobileMenu()">
+        <li class="dropdown" *ngIf="isMobileMenu() && auth.check()">
             <a class="dropdown-toggle" data-toggle="dropdown">
                 <p>
                     {{auth.getUser().name}}
@@ -42,6 +42,11 @@
                 <li><a href="#" (click)="logout($event)">Sair</a></li>
             </ul>
         </li>
+        <!--<li class="dropdown" *ngIf="isMobileMenu() && !auth.check()">
+            <a href="/auth/login">
+                <b>Login</b>
+            </a>
+        </li>-->
         <li class="separator hidden-lg hidden-md" *ngIf="isMobileMenu()"></li>
         <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}}">
             <a [routerLink]="[menuItem.path]">
@@ -49,5 +54,13 @@
                 <p>{{menuItem.title}}</p>
             </a>
         </li>
+    </ul>
+    <ul class="nav responsive-nav">
+        <li class="dropdown" *ngIf="isMobileMenu() && !auth.check()">
+            <a href="/auth/login">
+                    Login
+            </a>
+        </li>
+        <li class="separator hidden-lg hidden-md" *ngIf="isMobileMenu()"></li>
     </ul>
 </div>

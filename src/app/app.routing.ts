@@ -24,12 +24,13 @@ import {NewPasswordComponent} from "./user/auth/new-password/new-password.compon
             { path: 'password/reset',        component: RecoverPasswordComponent },
             { path: 'password/new', component: NewPasswordComponent},
 
-            { path: 'dashboard',      component: HomeComponent, canActivate: [AuthGuard]},
+            { path: 'dashboard',      component: HomeComponent},
             { path: 'user',           component: UserComponent, canActivate: [AuthGuard]},
             { path: 'frequencia',        component: ControleFrequenciaComponent, canActivate: [AuthGuard] },
             { path: 'meus-eventos',        component: MeusEventosComponent, canActivate: [AuthGuard] },
             { path: 'cad-evento',        component: CadEventoComponent, canActivate: [AuthGuard] },
-            { path: 'detalhes-evento',        component: DetalhesEventoComponent, canActivate: [AuthGuard] },
+            { path: 'edit-evento/:id',        component: CadEventoComponent, canActivate: [AuthGuard] },
+            { path: 'detalhes-evento/:id',        component: DetalhesEventoComponent, canActivate: [AuthGuard] },
             { path: 'atividade',        component: AtividadeComponent, canActivate: [AuthGuard] },
             { path: 'cad-atividade',        component: CadAtividadeComponent, canActivate: [AuthGuard] },
             { path: '',          redirectTo: 'dashboard', pathMatch: 'full', canActivate: [AuthGuard] }
