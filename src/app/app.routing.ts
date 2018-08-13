@@ -13,7 +13,7 @@ import {DetalhesEventoComponent} from "./evento/detalhes-evento/detalhes-evento.
 import {AtividadeComponent} from "./evento/atividade/atividade.component";
 import {CadAtividadeComponent} from "./evento/atividade/cad-atividade/cad-atividade.component";
 import {AuthGuard} from "./guards/auth.guard";
-import {NewPasswordComponent} from "./user/auth/new-password/new-password.component";
+// import {NewPasswordComponent} from "./user/auth/new-password/new-password.component";
 
 
 @NgModule({
@@ -22,7 +22,7 @@ import {NewPasswordComponent} from "./user/auth/new-password/new-password.compon
             { path: 'auth/login', component: LoginComponent },
             { path: 'auth/register',        component: RegisterComponent },
             { path: 'password/reset',        component: RecoverPasswordComponent },
-            { path: 'password/new', component: NewPasswordComponent},
+            // { path: 'password/new', component: NewPasswordComponent},
 
             { path: 'dashboard',      component: HomeComponent},
             { path: 'user',           component: UserComponent, canActivate: [AuthGuard]},
