@@ -4,8 +4,8 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Evento</h4>
-                        <p class="category">Detalhes do evento</p>
+                        <h4 class="title">{{dtevents.data.nome}}</h4>
+                        <p class="category">{{dtevents.data.descricao}}</p>
                     </div>
                     <div class="content">
                         <div class="table-full-width">
@@ -35,16 +35,11 @@
                                 </tr>
                                 </tbody>
                             </table>
-                        </div>
-                        <div class="footer">
-                            <hr>
-                            <div class="stats">
-                                <i class="fa fa-history"></i> Atualizado há 3 minutos atrás
-                            </div>
-
-                        </div>
                     </div>
+                        <a [routerLink]="['/delete-evento', dtevents.data.id]" class="btn-floating waves-light red right"><i class="material-icons">delete</i></a>
+                        <a [routerLink]="['/edit-evento', dtevents.data.id]" class="btn-floating waves-light blue right"><i class="material-icons">edit</i></a>
                 </div>
+             </div>
             </div>
         </div>
     </div>
