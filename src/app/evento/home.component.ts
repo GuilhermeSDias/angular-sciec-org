@@ -10,15 +10,16 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+    routerParam: any;
     isLoggedIn = true;
     errorCredentiasl = false;
+    eventObj: object = {};
+    events = [];
 
     constructor(
         private http: Http,
     ) { }
-    eventObj: object = {};
 
-    events = [];
     listEvents = function() {
 
         this.http.get('http://sciec.test/org/event/index').subscribe(

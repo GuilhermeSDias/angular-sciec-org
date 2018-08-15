@@ -1,27 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import {Http, Response, Headers} from '@angular/http';
-import {HomeComponent} from "../home.component";
 import {ActivatedRoute} from "@angular/router";
-import {query} from "@angular/core/src/animation/dsl";
 
 @Component({
   selector: 'app-detalhes-evento',
   templateUrl: './detalhes-evento.component.html',
   styleUrls: ['./detalhes-evento.component.scss']
 })
+
 export class DetalhesEventoComponent implements OnInit {
+    dteventObj: object = {};
+    dtevents;
 
     constructor(
         private http: Http,
-    ) { }
-    dteventObj: object = {};
+        private route: ActivatedRoute
+    ) {
+        console.log(this.route.snapshot.paramMap.get('id'))
+    }
 
-
-    dtevents;
-
-
-    fetchData = function() {
-        this.http.get('http://sciec.test/org/event/show/1').subscribe(
+    listDetalhesEvent = function() {
+        let id = +this.route.snapshot.paramMap.get('id');
+        this.http.get('http://sciec.test/org/event/show/'+id).subscribe(
             (res: Response) => {
                 this.dtevents = res.json();
                 console.log(this.dtevents.data);
@@ -49,7 +49,7 @@ export class DetalhesEventoComponent implements OnInit {
     };
 
   ngOnInit() {
-      this.fetchData();
+      this.listDetalhesEvent();
   }
 
 }
