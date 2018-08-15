@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Http, Response} from "@angular/http";
-import {applyRedirects} from "@angular/router/src/apply_redirects";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-cad-evento',
@@ -9,7 +9,10 @@ import {applyRedirects} from "@angular/router/src/apply_redirects";
 })
 export class CadEventoComponent implements OnInit {
 
-    constructor(private http: Http) { }
+    constructor(
+        private http: Http,
+        private router: Router
+    ) { }
     eventObj: object = {};
 
     events = [];
@@ -41,7 +44,7 @@ export class CadEventoComponent implements OnInit {
         this.http.post('http://sciec.test/org/event/store', this.eventObj).subscribe((res: Response) => {
             console.log(res);
             this.fetchData();
-            this.router.navigate(['auth/login']);
+            this.router.navigate(['/dashboard']);
         });
     };
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../user/auth/services/auth.service";
+import {Router} from "@angular/router";
 
 declare const $: any;
 declare interface RouteInfo {
@@ -26,16 +27,22 @@ export class SidebarComponent implements OnInit {
   menuItems: any[];
 
   constructor(
-      private auth: AuthService
+      private auth: AuthService,
+      private router: Router
   ) { }
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
   }
 
-    logout(e){
+    /*logout(e){
         e.preventDefault();
         this.auth.logout();
+    }*/
+    /* SOLUÇÃO TEMPORÁRIA*/
+    logout(){
+        localStorage.clear()
+        this.router.navigate(['dshborad']);
     }
 
   isMobileMenu() {

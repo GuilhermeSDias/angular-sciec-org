@@ -11,7 +11,8 @@ export class AuthService {
 
     constructor(
         private http: HttpClient,
-        private router: Router) { }
+        private router: Router
+    ) { }
 
     check (): boolean {
       return localStorage.getItem('user') ? true : false;
