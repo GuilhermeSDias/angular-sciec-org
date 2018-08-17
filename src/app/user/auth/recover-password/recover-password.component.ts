@@ -16,7 +16,7 @@ export class RecoverPasswordComponent implements OnInit {
             'email': user.email,
         };
 
-        this.http.post('http://sciec.test/password/email', this.resetObj).subscribe((res: Response) => {
+        this.http.post('http://localhost:8000/password/email', this.resetObj).subscribe((res: Response) => {
             console.log( this.resetObj);
         });
     };

@@ -13,6 +13,7 @@ import {DetalhesEventoComponent} from "./evento/detalhes-evento/detalhes-evento.
 import {AtividadeComponent} from "./evento/atividade/atividade.component";
 import {CadAtividadeComponent} from "./evento/atividade/cad-atividade/cad-atividade.component";
 import {AuthGuard} from "./guards/auth.guard";
+import { UpdateEventComponent } from './evento/update-event/update-event.component';
 // import {NewPasswordComponent} from "./user/auth/new-password/new-password.component";
 
 
@@ -29,12 +30,12 @@ import {AuthGuard} from "./guards/auth.guard";
             { path: 'frequencia',        component: ControleFrequenciaComponent, canActivate: [AuthGuard] },
             { path: 'meus-eventos',        component: MeusEventosComponent, canActivate: [AuthGuard] },
             { path: 'cad-evento',        component: CadEventoComponent, canActivate: [AuthGuard] },
-            { path: 'edit-evento/:id',        component: CadEventoComponent, canActivate: [AuthGuard] },
+            { path: 'edit-evento/:id',        component: UpdateEventComponent, canActivate: [AuthGuard] },
             { path: 'detalhes-evento/:id',        component: DetalhesEventoComponent, canActivate: [AuthGuard] },
             { path: 'atividade',        component: AtividadeComponent, canActivate: [AuthGuard] },
             { path: 'cad-atividade',        component: CadAtividadeComponent, canActivate: [AuthGuard] },
             { path: '',          redirectTo: 'dashboard', pathMatch: 'full', canActivate: [AuthGuard] }
-
+            
         ])
     ],
     declarations: [],

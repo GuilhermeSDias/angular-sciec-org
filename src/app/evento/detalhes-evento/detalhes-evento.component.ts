@@ -21,7 +21,7 @@ export class DetalhesEventoComponent implements OnInit {
 
     listDetalhesEvent = function() {
         let id = +this.route.snapshot.paramMap.get('id');
-        this.http.get('http://sciec.test/org/event/show/'+id).subscribe(
+        this.http.get('http://localhost:8000/org/event/show/'+id).subscribe(
             (res: Response) => {
                 this.dtevents = res.json();
                 console.log(this.dtevents.data);
@@ -42,7 +42,7 @@ export class DetalhesEventoComponent implements OnInit {
             'status': dtevent.status,
             'coordenador': dtevent.coordenador,
         };
-        this.http.post('http://sciec.test/org/event/store', this.dteventObj).subscribe((res: Response) => {
+        this.http.post('http://localhost:8000/org/event/store', this.dteventObj).subscribe((res: Response) => {
             console.log(res);
             this.fetchData();
         });

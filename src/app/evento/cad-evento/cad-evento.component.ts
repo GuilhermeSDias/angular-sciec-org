@@ -18,7 +18,7 @@ export class CadEventoComponent implements OnInit {
     events = [];
     fetchData = function() {
 
-        this.http.get('http://sciec.test/admin/event/index').subscribe(
+        this.http.get('http://localhost:8000/admin/event/index').subscribe(
             (res: Response) => {
                 this.events = res.json();
                 console.log(this.events.data);
@@ -41,7 +41,7 @@ export class CadEventoComponent implements OnInit {
             'coordenador': event.coordenador,
         };
 
-        this.http.post('http://sciec.test/org/event/store', this.eventObj).subscribe((res: Response) => {
+        this.http.post('http://localhost:8000/org/event/store', this.eventObj).subscribe((res: Response) => {
             console.log(res);
             this.fetchData();
             this.router.navigate(['/dashboard']);
