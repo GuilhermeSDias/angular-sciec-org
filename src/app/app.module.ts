@@ -28,8 +28,11 @@ import {AuthGuard} from "./guards/auth.guard";
 import {TokenInterceptor} from "./interceptors/token.interceptor";
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {RefreshTokenInterceptor} from "./interceptors/refresh-token.interceptor";
+<<<<<<< HEAD
 import { UpdateEventComponent } from './evento/update-event/update-event.component';
 // import { NewPasswordComponent } from './user/auth/new-password/new-password.component';
+=======
+>>>>>>> 42d6bccc1c5f732504a59740fa9b1a08e987cd84
 
 @NgModule({
   declarations: [
@@ -44,8 +47,11 @@ import { UpdateEventComponent } from './evento/update-event/update-event.compone
     DetalhesEventoComponent,
     AtividadeComponent,
     CadAtividadeComponent,
+<<<<<<< HEAD
     UpdateEventComponent,
     // NewPasswordComponent,
+=======
+>>>>>>> 42d6bccc1c5f732504a59740fa9b1a08e987cd84
 
   ],
   imports: [
