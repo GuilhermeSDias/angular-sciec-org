@@ -10,8 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UpdateEventComponent implements OnInit {
 
-  dteventObj: object = {};
-  dtevents;
+  upeventObj: object = {};
+  upevents;
 
   constructor(   
     private http: Http,
@@ -23,16 +23,15 @@ export class UpdateEventComponent implements OnInit {
     let id = +this.route.snapshot.paramMap.get('id');
     this.http.get('http://sciec.test/org/event/show/'+id).subscribe(
         (res: Response) => {
-            this.dtevents = res.json();
-            console.log(this.dtevents.data);
+            this.upevents = res.json();
+            console.log(this.upevents.data);
         }
 
     );
-
 };
 
 updateEvent = function(upEvent) {
-  this.upEventObj = {
+  this.upeventObj = {
       'nome': upEvent.nome,
       'descricao': upEvent.descricao,
       'local': upEvent.local,
@@ -44,15 +43,14 @@ updateEvent = function(upEvent) {
       'coordenador': upEvent.coordenador,
   };
   let id = +this.route.snapshot.paramMap.get('id');
-  this.http.post('http://sciec.test/org/event/update/'+id, this.upEventObj).subscribe((res: Response) => {
-    console.log(res);
-    this.listEvent();
-    this.router.navigate(['/dashboard']);
-});
-};
+      this.http.post('http://sciec.test/org/event/update/'+id, this.upeventObj).subscribe((res: Response) => {
+          console.log(res);
+          this.showEventForm();
+          this.router.navigate(['/dashboard']);
+      });
+    };
 
   ngOnInit() {
-
     this.showEventForm();
   }
 
