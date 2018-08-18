@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit {
             'status': event.status,
             'coordenador': event.coordenador,
         };
-        this.http.post('http://localhost:8000/org/event/store/', this.eventObj).subscribe((res: Response) => {
+        this.http.post('http://localhost:8000/org/org/event/store/', this.eventObj).subscribe((res: Response) => {
             console.log(res);
             this.listEvents();
         });

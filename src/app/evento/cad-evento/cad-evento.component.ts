@@ -20,7 +20,7 @@ export class CadEventoComponent implements OnInit {
     ) {}
 
     listEvent = function() {
-        this.http.get('http://sciec.test/admin/event/index').subscribe(
+        this.http.get('http://localhost:8000/admin/event/index').subscribe(
             (res: Response) => {
                 this.events = res.json();
             }
@@ -39,7 +39,7 @@ export class CadEventoComponent implements OnInit {
             'institutions_id': event.institutions_id,
             'coordenador': event.coordenador,
         };
-            this.http.post('http://sciec.test/org/event/store', this.eventObj).subscribe((res: Response) => {
+            this.http.post('http://localhost:8000/org/event/store', this.eventObj).subscribe((res: Response) => {
                 console.log(res);
                 this.listEvent();
                 this.router.navigate(['/dashboard']);

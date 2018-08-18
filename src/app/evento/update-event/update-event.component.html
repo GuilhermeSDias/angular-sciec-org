@@ -7,7 +7,7 @@
                       <h4 class="title">Editar Evento</h4>
                   </div>
                   <div class="panel-body">
-                      <form id = "formNewEvent" name = "formNewEvent" #upEventData = "ngForm" (ngSubmit) = "updateEvent(upEventData.value)">
+                      <form id = "formUpEvent" name = "formUpEvent" #upEvent = "ngForm" (ngSubmit) = "updateEvent(upEvent.value)">
                       <div class="container-fluid">
                           <div class="row">
                               <div class="col s12">
@@ -15,39 +15,39 @@
                                                   <div class="row">
                                                       <div class="input-field col s12">
                                                           <i class="material-icons prefix">event</i>
-                                                          <input id="nome" type="text" name="nome" required class="form-control" [(ngModel)] = "dtevents.data.nome" ngModel>                                                        
+                                                          <input id="nome" type="text" name="nome" required class="form-control" [(ngModel)] = "upevents.data.nome" ngModel>                                                        
                                                       </div>
                                                       <div class="input-field col s12">
                                                           <i class="material-icons prefix">description</i>
-                                                          <input id="icon_description" type="text" name="descricao" required class="validate" [(ngModel)] = "dtevents.data.descricao" ngModel>                                                          
+                                                          <input id="icon_description" type="text" name="descricao" required class="validate" [(ngModel)] = "upevents.data.descricao" ngModel>                                                          
                                                       </div>
                                                       <div class="input-field col s12">
                                                           <i class="material-icons prefix">location_on</i>
-                                                          <input id="icon_local" type="tel" name="local" required class="validate" [(ngModel)] = "dtevents.data.local" ngModel>                                                        
+                                                          <input id="icon_local" type="tel" name="local" required class="validate" [(ngModel)] = "upevents.data.local" ngModel>                                                        
                                                       </div>
                                                       <div class="col s6">
                                                           <i class="material-icons left">today</i><label for="icon_dt-conclusao">Data de Inicio</label>
-                                                          <input id="icon_dt-inicio" type="text" required name="data_inicio" class="validate" [(ngModel)] = "dtevents.data.data_inicio" ngModel>
+                                                          <input id="icon_dt-inicio" type="text" required name="data_inicio" class="validate" [(ngModel)] = "upevents.data.data_inicio" ngModel>
                                                       </div>
                                                       <div class="col s6">
                                                           <i class="material-icons left">today</i><label for="icon_dt-conclusao">Data de Conclusão</label>
-                                                          <input id="icon_dt-conclusao" type="text" required name="data_conclusao" class="validate" [(ngModel)] = "dtevents.data.data_conclusao" ngModel>
+                                                          <input id="icon_dt-conclusao" type="text" required name="data_conclusao" class="validate" [(ngModel)] = "upevents.data.data_conclusao" ngModel>
                                                       </div>
                                                       <div class="col s6">
                                                           <i class="material-icons left">info</i><label for="icon_situacao">Situação</label>
-                                                          <input id="icon_situacao" type="text" required name="situacao" class="validate" [(ngModel)] = "dtevents.data.situacao" ngModel>
+                                                          <input id="icon_situacao" type="text" required name="situacao" class="validate" [(ngModel)] = "upevents.data.situacao" ngModel>
                                                       </div>
                                                       <div class="col s6">
                                                           <i class="material-icons left">priority_high</i><label for="icon_status">Status</label>
-                                                          <input id="icon_status" type="text" name="status" required class="validate" [(ngModel)] = "dtevents.data.status" ngModel>
+                                                          <input id="icon_status" type="text" name="status" required class="validate" [(ngModel)] = "upevents.data.status" ngModel>
                                                       </div>
                                                       <div class="input-field col s12">
                                                           <i class="material-icons prefix">school</i>
-                                                          <input id="icon_institutions" type="text" name="institutions_id" required class="validate" [(ngModel)] = "dtevents.data.institutions_id" ngModel>                                                       
+                                                          <input id="icon_institutions" type="text" name="institutions_id" required class="validate" [(ngModel)] = "upevents.data.institutions_id" ngModel>                                                       
                                                       </div>
                                                       <div class="input-field col s12">
                                                           <i class="material-icons prefix">person</i>
-                                                          <input id="icon_coordenador" type="text" name="coordenador" required class="validate" [(ngModel)] = "dtevents.data.coordenador" ngModel>                                                          
+                                                          <input id="icon_coordenador" type="text" name="coordenador" required class="validate" [(ngModel)] = "upevents.data.coordenador" ngModel>                                                          
                                                       </div>
                                                   </div>
                                       </div>
