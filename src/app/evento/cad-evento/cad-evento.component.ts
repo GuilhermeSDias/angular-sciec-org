@@ -19,12 +19,8 @@ export class CadEventoComponent implements OnInit {
         private route: ActivatedRoute
     ) {}
 
-<<<<<<< HEAD
-        this.http.get('http://localhost:8000/admin/event/index').subscribe(
-=======
     listEvent = function() {
         this.http.get('http://sciec.test/admin/event/index').subscribe(
->>>>>>> 42d6bccc1c5f732504a59740fa9b1a08e987cd84
             (res: Response) => {
                 this.events = res.json();
             }
@@ -50,9 +46,6 @@ export class CadEventoComponent implements OnInit {
             });
     };
 
-<<<<<<< HEAD
-        this.http.post('http://localhost:8000/org/event/store', this.eventObj).subscribe((res: Response) => {
-=======
     updateEvent = function(upEvent) {
         this.upEventObj = {
             'nome': upEvent.nome,
@@ -67,7 +60,6 @@ export class CadEventoComponent implements OnInit {
         };
         let id = +this.route.snapshot.paramMap.get('id');
         this.http.post('http://sciec.test/org/event/update/'+id, this.upEventObj).subscribe((res: Response) => {
->>>>>>> 42d6bccc1c5f732504a59740fa9b1a08e987cd84
             console.log(res);
             this.listEvent();
             this.router.navigate(['/dashboard']);

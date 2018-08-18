@@ -17,7 +17,7 @@ export class UpdateEventComponent implements OnInit {
 
   showEventForm = function() {
     let id = +this.route.snapshot.paramMap.get('id');
-    this.http.get('http://localhost:8000/org/event/show/'+id).subscribe(
+    this.http.get('http://sciec.test/org/event/show/'+id).subscribe(
         (res: Response) => {
             this.dtevents = res.json();
             console.log(this.dtevents.data);

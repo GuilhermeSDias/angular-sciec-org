@@ -13,11 +13,8 @@ import {DetalhesEventoComponent} from "./evento/detalhes-evento/detalhes-evento.
 import {AtividadeComponent} from "./evento/atividade/atividade.component";
 import {CadAtividadeComponent} from "./evento/atividade/cad-atividade/cad-atividade.component";
 import {AuthGuard} from "./guards/auth.guard";
-<<<<<<< HEAD
 import { UpdateEventComponent } from './evento/update-event/update-event.component';
 // import {NewPasswordComponent} from "./user/auth/new-password/new-password.component";
-=======
->>>>>>> 42d6bccc1c5f732504a59740fa9b1a08e987cd84
 
 
 @NgModule({
