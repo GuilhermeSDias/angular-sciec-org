@@ -46,26 +46,6 @@ export class CadEventoComponent implements OnInit {
             });
     };
 
-    updateEvent = function(upEvent) {
-        this.upEventObj = {
-            'nome': upEvent.nome,
-            'descricao': upEvent.descricao,
-            'local': upEvent.local,
-            'data_inicio': upEvent.data_inicio,
-            'data_conclusao': upEvent.data_conclusao,
-            'situacao': upEvent.situacao,
-            'status': upEvent.status,
-            'institutions_id': upEvent.institutions_id,
-            'coordenador': upEvent.coordenador,
-        };
-        let id = +this.route.snapshot.paramMap.get('id');
-        this.http.post('http://sciec.test/org/event/update/'+id, this.upEventObj).subscribe((res: Response) => {
-            console.log(res);
-            this.listEvent();
-            this.router.navigate(['/dashboard']);
-        });
-    };
-
     ngOnInit() {
         this.listEvent();
 
