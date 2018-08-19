@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import {Http, Response} from "@angular/http";
 
@@ -8,7 +9,10 @@ import {Http, Response} from "@angular/http";
 })
 export class RecoverPasswordComponent implements OnInit {
 
-  constructor(private http: Http) { }
+  constructor(
+    private http: Http,
+    private router: Router
+    ) { }
     resetObj: object = {};
 
     resetPassword = function(user) {
