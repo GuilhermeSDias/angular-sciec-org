@@ -46,7 +46,7 @@ updateEvent = function(upEvent) {
       this.http.post('http://sciec.test/org/event/update/'+id, this.upeventObj).subscribe((res: Response) => {
           console.log(res);
           this.showEventForm();
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/eventos']);
       });
     };
 
