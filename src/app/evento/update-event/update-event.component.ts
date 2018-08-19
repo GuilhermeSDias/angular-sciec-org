@@ -21,7 +21,7 @@ export class UpdateEventComponent implements OnInit {
 
   showEventForm = function() {
     let id = +this.route.snapshot.paramMap.get('id');
-    this.http.get('http://localhost:8000/org/event/show/'+id).subscribe(
+    this.http.get('http://sciec.test/org/event/show/'+id).subscribe(
         (res: Response) => {
             this.upevents = res.json();
             console.log(this.upevents.data);
@@ -43,10 +43,10 @@ updateEvent = function(upEvent) {
       'coordenador': upEvent.coordenador,
   };
   let id = +this.route.snapshot.paramMap.get('id');
-      this.http.post('http://localhost:8000/org/event/update/'+id, this.upeventObj).subscribe((res: Response) => {
+      this.http.post('http://sciec.test/org/event/update/'+id, this.upeventObj).subscribe((res: Response) => {
           console.log(res);
           this.showEventForm();
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/eventos']);
       });
     };
 

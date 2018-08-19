@@ -24,16 +24,17 @@ import { UpdateEventComponent } from './evento/update-event/update-event.compone
             { path: 'auth/register',        component: RegisterComponent },
             { path: 'password/reset',        component: RecoverPasswordComponent },
 
-            { path: 'dashboard',      component: HomeComponent},
+            { path: 'eventos',      component: HomeComponent},
             { path: 'user',           component: UserComponent, canActivate: [AuthGuard]},
             { path: 'frequencia',        component: ControleFrequenciaComponent, canActivate: [AuthGuard] },
             { path: 'meus-eventos',        component: MeusEventosComponent, canActivate: [AuthGuard] },
             { path: 'cad-evento',        component: CadEventoComponent, canActivate: [AuthGuard] },
             { path: 'edit-evento/:id',        component: UpdateEventComponent, canActivate: [AuthGuard] },
+            { path: 'delete-evento/:id',        component: DetalhesEventoComponent, canActivate: [AuthGuard] },
             { path: 'detalhes-evento/:id',        component: DetalhesEventoComponent, canActivate: [AuthGuard] },
             { path: 'atividade',        component: AtividadeComponent, canActivate: [AuthGuard] },
             { path: 'cad-atividade',        component: CadAtividadeComponent, canActivate: [AuthGuard] },
-            { path: '',          redirectTo: 'dashboard', pathMatch: 'full', canActivate: [AuthGuard] }
+            { path: '',          redirectTo: 'eventos', pathMatch: 'full', canActivate: [AuthGuard] }
             
         ])
     ],

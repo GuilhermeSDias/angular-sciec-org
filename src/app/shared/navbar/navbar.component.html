@@ -9,15 +9,7 @@
             </button>
         </div>
         <div class="collapse navbar-collapse" *ngIf="auth.check()">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <i class="material-icons grey-text">check_circle</i>
-                </li>
-                <li>
-                    <a href="#">
-                        <p>Validar Certificado</p>
-                    </a>
-                </li>
+            <ul class="nav navbar-nav navbar-right">                
                 <li>
                     <i class="material-icons grey-text">event</i>
                 </li>
@@ -29,7 +21,7 @@
                         </p>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="\dashboard">Listar Eventos</a></li>
+                        <li><a href="\eventos">Listar Eventos</a></li>
                         <li class="divider"></li>
                         <li><a href="\cad-evento">Criar Eventos</a></li>
                         <li><a href="\meus-eventos">Meus Eventos</a></li>
@@ -48,8 +40,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="\user">Meu Perfil</a></li>
                         <li class="divider"></li>
-                        <li><a href="#" (click)="logout($event)">Sair</a></li>
-                        <!--<li><a href="#" (click)="logout($event)">Sair</a></li>-->
+                        <li><a href="#" (click)="logout($event)">Sair</a></li>                        
                     </ul>
                 </li>
                 <li *ngIf="!auth.check()">

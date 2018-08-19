@@ -42,7 +42,7 @@ export class CadEventoComponent implements OnInit {
             this.http.post('http://localhost:8000/org/event/store', this.eventObj).subscribe((res: Response) => {
                 console.log(res);
                 this.listEvent();
-                this.router.navigate(['/dashboard']);
+                this.router.navigate(['/eventos']);
             });
     };
 
