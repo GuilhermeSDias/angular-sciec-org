@@ -8,8 +8,31 @@
                         <p class="category">{{dtevents.data.descricao}}</p>
                     </div>
                     <div class="content">
-                        <div class="table-full-width">
-                            <table class="table">
+                        <div class="card">
+                            <ul>
+                                <li>
+                                        <p class="category">Local:</p><p>{{dtevents.data.local}}</p>
+                                </li>   
+                                <li>
+                                        <p class="category">Data de Início:</p><p>{{dtevents.data.data_inicio}}</p>
+                                </li>   
+                                <li>
+                                        <p class="category">Data de Conclusão:</p><p>{{dtevents.data.data_conclusao}}</p>
+                                </li>   
+                                <li>
+                                        <p class="category">Situação:</p><p>{{dtevents.data.situacao}}</p>
+                                </li>   
+                                <li>
+                                        <p class="category">Status:</p><p>{{dtevents.data.status}}</p>
+                                </li>   
+                                <li>
+                                        <p class="category">Instituição:</p><p>{{dtevents.data.institutions_id}}</p>
+                                </li> 
+                                <li>
+                                        <p class="category">Coordenador:</p><p>{{dtevents.data.coordenador}}</p>
+                                </li>                                                                
+                            </ul>
+                            <!-- <table class="table">
                                 <thead>
                                 <tr>
                                     <th scope="col">nome</th>
@@ -34,7 +57,7 @@
                                     <td>{{dtevents.data.coordenador}}</td>
                                 </tr>
                                 </tbody>
-                            </table>
+                            </table> -->
                     </div>
                         <a [routerLink]="['/delete-evento', dtevents.data.id]" class="btn-floating waves-light red right"><i class="material-icons">delete</i></a>
                         <a [routerLink]="['/edit-evento', dtevents.data.id]" class="btn-floating waves-light blue right"><i class="material-icons">edit</i></a>
