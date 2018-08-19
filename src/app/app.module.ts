@@ -8,7 +8,6 @@ import { AppRoutingModule } from './app.routing';
 import { NavbarModule } from './shared/navbar/navbar.module';
 import { FooterModule } from './shared/footer/footer.module';
 import { SidebarModule } from './sidebar/sidebar.module';
-import { LbdModule } from './lbd/lbd.module';
 import {CommonModule} from "@angular/common";
 import {AuthModule} from "./user/auth/auth.module";
 
@@ -56,7 +55,6 @@ import { UpdateEventComponent } from './evento/update-event/update-event.compone
     SidebarModule,
     RouterModule,
     AppRoutingModule,
-    LbdModule,
     CommonModule,
     AuthModule,
   ],
