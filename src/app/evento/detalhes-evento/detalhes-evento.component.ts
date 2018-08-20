@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Http, Response, Headers} from '@angular/http';
 import {ActivatedRoute, Router} from "@angular/router";
+import 'rxjs/add/operator/toPromise';
 
 @Component({
   selector: 'app-detalhes-evento',
@@ -12,6 +13,7 @@ export class DetalhesEventoComponent implements OnInit {
     dteventObj: object = {};
     dtevents;
     institution;
+    id:number;
 
     constructor(
         private http: Http,
@@ -23,7 +25,7 @@ export class DetalhesEventoComponent implements OnInit {
 
     listDetalhesEvent = function() {
         let id = +this.route.snapshot.paramMap.get('id');
-        this.http.get('http://sciec.test/org/event/show/'+id).subscribe(
+        this.http.get('http://localhost:8000/org/event/show/'+id).subscribe(
             (res: Response) => {
                 this.dtevents = res.json();
                 console.log(this.dtevents.data);
@@ -35,7 +37,7 @@ export class DetalhesEventoComponent implements OnInit {
 
     listInstitutions = function() {
         let id = +this.route.snapshot.paramMap.get('id');
-        this.http.get('http://sciec.test/admin/config/institution/show/'+id).subscribe(
+        this.http.get('http://localhost:8000/admin/config/institution/show/'+id).subscribe(
             (res: Response) => {
                 this.institution = res.json();
                 console.log(res);
@@ -43,18 +45,20 @@ export class DetalhesEventoComponent implements OnInit {
         );
     };
 
-    deleteEvent = function() {
+    deleteEvent = function(dtevents) {
+        this.dteventObj = {
+            'status': 0,
+
+        };
         let id = +this.route.snapshot.paramMap.get('id');
-        this.http.get('http://sciec.test/org/event/delete/'+id).subscribe(
-            (res: Response) => {
-                this.dtevents = res.json();
-                console.log(this.dtevents.data);
-                this.router.navigate(['/eventos']);                
-            }
-
-        );
-
-    };
+            this.http.post('http://localhost:8000/event/delete/'+id, this.dteventObj).subscribe((res: Response) => {
+                console.log(res);
+                this.showEventForm();
+                this.router.navigate(['/eventos']);
+            });
+          };
+      
+      
 
   ngOnInit() {
       this.listDetalhesEvent();

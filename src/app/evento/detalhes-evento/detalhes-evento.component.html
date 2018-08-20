@@ -59,8 +59,15 @@
                                 </tr>
                                 </tbody>
                             </table> -->
-                    </div>                      
-                        <a [routerLink]="['/delete-evento', dtevents.data.id]" class="btn-floating waves-light red right"><i class="material-icons">delete</i></a>
+                    </div>    
+                    <!-- <form id = "formDelEvent" name = "formDelEvent" #upEvent = "ngForm" (ngSubmit) = "deleteEvent(deleteEvent.value)">
+                        
+                                    <input id="status" type="hidden" name="status" required class="validate" [(ngModel)] = "0" ngModel>
+                                    <button type="submit" class="btn-floating waves-light red right" value="Salvar"><i class="material-icons">delete</i></button>
+
+                    </form> -->
+                  
+                        <a (click) = "deleteEvent(dtevents.data.id)" class="btn-floating waves-light red right"><i class="material-icons">delete</i></a>
                         <a [routerLink]="['/edit-evento', dtevents.data.id]" class="btn-floating waves-light blue right"><i class="material-icons">edit</i></a>
                 </div>
              </div>
