@@ -53,10 +53,10 @@ export class DetalhesEventoComponent implements OnInit {
         let id = +this.route.snapshot.paramMap.get('id');
             this.http.post('http://sciec.test/org/event/delete/'+id, this.dteventObj).subscribe(
                 (res: Response) => {
-                console.log(res);
-                this.showEventForm();
-                this.router.navigate(['/eventos']);
+                console.log(res);                
+                // this.showEventForm();
             });
+            this.router.navigate(['/eventos']);           
           };
       
       

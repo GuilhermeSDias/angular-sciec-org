@@ -10,7 +10,7 @@
                     <div class="content">
                         <div class="row">
                             <div class="col-md-4" *ngFor="let event of events.data">
-                                <div class="card" style="height: 15em" *ngIf="event.status === 1">
+                                <div class="card" style="height: 15em" *ngIf="event.status != 0">
                                     <div class="h4 text-center">{{event.nome}}</div>
                                     <a [routerLink]="['/detalhes-evento', event.id]" class="waves-effect waves-light btn green col s12"><i
                                             class="material-icons left">event</i>Ver Evento</a>
