@@ -11,6 +11,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class DetalhesEventoComponent implements OnInit {
     dteventObj: object = {};
     dtevents;
+    institution;
 
     constructor(
         private http: Http,
@@ -32,7 +33,17 @@ export class DetalhesEventoComponent implements OnInit {
 
     };
 
-    DeleteEvent = function() {
+    listInstitutions = function() {
+        let id = +this.route.snapshot.paramMap.get('id');
+        this.http.get('http://sciec.test/admin/config/institution/show/'+id).subscribe(
+            (res: Response) => {
+                this.institution = res.json();
+                console.log(res);
+            }
+        );
+    };
+
+    deleteEvent = function() {
         let id = +this.route.snapshot.paramMap.get('id');
         this.http.get('http://sciec.test/org/event/delete/'+id).subscribe(
             (res: Response) => {
@@ -47,6 +58,7 @@ export class DetalhesEventoComponent implements OnInit {
 
   ngOnInit() {
       this.listDetalhesEvent();
+      this.listInstitutions();
   }
 
 }

@@ -12,6 +12,7 @@ export class UpdateEventComponent implements OnInit {
 
   upeventObj: object = {};
   upevents;
+  institution = [];
 
   constructor(   
     private http: Http,
@@ -28,6 +29,14 @@ export class UpdateEventComponent implements OnInit {
         }
 
     );
+};
+
+listInstitutions = function() {
+  this.http.get('http://sciec.test/admin/config/institution/index').subscribe(
+      (res: Response) => {
+          this.institution = res.json();
+      }
+  );
 };
 
 updateEvent = function(upEvent) {
@@ -52,6 +61,7 @@ updateEvent = function(upEvent) {
 
   ngOnInit() {
     this.showEventForm();
+    this.listInstitutions();
   }
 
 }
