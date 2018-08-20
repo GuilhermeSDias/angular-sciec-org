@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="add23e51-0799-4707-a964-18fdaad76026" name="Default Changelist" comment="Não Subi Isso!">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/evento/cad-evento/cad-evento.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/evento/cad-evento/cad-evento.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/evento/cad-evento/cad-evento.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/evento/cad-evento/cad-evento.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/evento/detalhes-evento/detalhes-evento.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/evento/detalhes-evento/detalhes-evento.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/evento/detalhes-evento/detalhes-evento.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/evento/detalhes-evento/detalhes-evento.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/evento/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/evento/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/evento/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/evento/home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/evento/update-event/update-event.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/evento/update-event/update-event.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/evento/update-event/update-event.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/evento/update-event/update-event.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/environment.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -85,11 +89,10 @@
       <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="59" column="4" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
+            <state relative-caret-position="915">
+              <caret line="61" column="4" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="4" />
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
-                <element signature="e#521#566#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -234,7 +237,7 @@
       <workItem from="1534466952645" duration="178000" />
       <workItem from="1534478207608" duration="1358000" />
       <workItem from="1534704835775" duration="3917000" />
-      <workItem from="1534792206585" duration="359000" />
+      <workItem from="1534792206585" duration="1699000" />
     </task>
     <task id="LOCAL-00001" summary="New-password comentado">
       <created>1534165638482</created>
@@ -264,11 +267,18 @@
       <option name="project" value="LOCAL" />
       <updated>1534706414261</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Não Subi Isso!">
+      <created>1534792621823</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1534792621823</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59989000" />
+    <option name="totallyTimeSpent" value="61329000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -285,14 +295,15 @@
       <window_info anchor="bottom" id="TODO" order="7" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5007576" side_tool="true" weight="0.31071427" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" visible="true" weight="0.3283582" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3283582" />
       <window_info anchor="bottom" id="Run" order="3" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49924242" weight="0.30783582" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49924242" visible="true" weight="0.30783582" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20257966" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
@@ -304,7 +315,6 @@
       <window_info anchor="bottom" id="Messages" order="14" weight="0.3286219" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="2" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -370,7 +380,6 @@
           <caret line="59" column="4" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
           <folding>
             <element signature="e#0#58#0" expanded="true" />
-            <element signature="e#521#566#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -603,6 +612,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="16" column="27" lean-forward="true" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -615,11 +627,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="59" column="4" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
+        <state relative-caret-position="915">
+          <caret line="61" column="4" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="4" />
           <folding>
             <element signature="e#0#58#0" expanded="true" />
-            <element signature="e#521#566#0" expanded="true" />
           </folding>
         </state>
       </provider>

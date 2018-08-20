@@ -12,6 +12,7 @@ export class CadEventoComponent implements OnInit {
     upEventObj: object = {};
     events = [];
     id: number;
+    institution = [];
 
     constructor(
         private http: Http,
@@ -23,6 +24,15 @@ export class CadEventoComponent implements OnInit {
         this.http.get('http://localhost:8000/admin/event/index').subscribe(
             (res: Response) => {
                 this.events = res.json();
+                
+            }
+        );
+    };
+
+    listInstitutions = function() {
+        this.http.get('http://sciec.test/admin/config/institution/index').subscribe(
+            (res: Response) => {
+                this.institution = res.json();
             }
         );
     };
@@ -48,6 +58,7 @@ export class CadEventoComponent implements OnInit {
 
     ngOnInit() {
         this.listEvent();
+        this.listInstitutions();
 
     }
 

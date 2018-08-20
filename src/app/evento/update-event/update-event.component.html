@@ -41,10 +41,17 @@
                                                           <i class="material-icons left">priority_high</i><label for="icon_status">Status</label>
                                                           <input id="icon_status" type="text" name="status" required class="validate" [(ngModel)] = "upevents.data.status" ngModel>
                                                       </div>
-                                                      <div class="input-field col s12">
+                                                      <!-- <div class="input-field col s12">
                                                           <i class="material-icons prefix">school</i>
                                                           <input id="icon_institutions" type="text" name="institutions_id" required class="validate" [(ngModel)] = "upevents.data.institutions_id" ngModel>                                                       
-                                                      </div>                                                
+                                                      </div>-->
+                                                      <div class=" col s12">
+                                                        <i class="material-icons prefix">school</i><label>Instituição</label>
+                                                    <select class="browser-default validate" name="institutions_id" required ngModel>
+                                                        <option value="" disabled selected>Escola a Instituição</option>                                        
+                                                        <option *ngFor="let institution of institution.data" value="{{institution.id}}">{{institution.nome}}</option> 
+                                                    </select>
+                                                    </div>
                                                       <div class="input-field col s12">
                                                           <i class="material-icons prefix">person</i>
                                                           <input id="icon_coordenador" type="text" name="coordenador" required class="validate" [(ngModel)] = "upevents.data.coordenador" ngModel>                                                          
@@ -54,7 +61,7 @@
                               </div>
                           </div>
                           <div class="col s12 text-right">
-                              <input type="submit" class="waves-effect waves-light btn green" value="Salvar">
+                              <button type="submit" class="waves-effect waves-light btn green" value="Salvar"><i class="material-icons left">save</i>Salvar</button>
                           </div>
                       </div>
                       </form>
