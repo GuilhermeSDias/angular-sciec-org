@@ -32,7 +32,7 @@ export class UpdateEventComponent implements OnInit {
 };
 
 listInstitutions = function() {
-  this.http.get('http://sciec.test/admin/config/institution/index').subscribe(
+  this.http.get('http://localhost:8000/admin/config/institution/index').subscribe(
       (res: Response) => {
           this.institution = res.json();
       }

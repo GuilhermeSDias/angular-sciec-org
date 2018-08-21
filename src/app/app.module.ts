@@ -29,42 +29,41 @@ import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {RefreshTokenInterceptor} from "./interceptors/refresh-token.interceptor";
 import { UpdateEventComponent } from './evento/update-event/update-event.component';
 // import { NewPasswordComponent } from './user/auth/new-password/new-password.component';
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    UserComponent,
-    ControleFrequenciaComponent,
-    MeusEventosComponent,
-    CadEventoComponent,
-    RegisterComponent,
-    RecoverPasswordComponent,
-    DetalhesEventoComponent,
-    AtividadeComponent,
-    CadAtividadeComponent,
-    UpdateEventComponent,
+    declarations: [
+        AppComponent,
+        HomeComponent,
+        UserComponent,
+        ControleFrequenciaComponent,
+        MeusEventosComponent,
+        CadEventoComponent,
+        RegisterComponent,
+        RecoverPasswordComponent,
+        DetalhesEventoComponent,
+        AtividadeComponent,
+        CadAtividadeComponent,
+        UpdateEventComponent,
 
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    NavbarModule,
-    FooterModule,
-    SidebarModule,
-    RouterModule,
-    AppRoutingModule,
-    CommonModule,
-    AuthModule,
-  ],
-  providers: [
-      AuthGuard,
-      {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
-      {provide: HTTP_INTERCEPTORS, useClass: RefreshTokenInterceptor, multi: true }
-  ],
-  bootstrap: [
-      AppComponent
-  ]
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        NavbarModule,
+        FooterModule,
+        SidebarModule,
+        RouterModule,
+        AppRoutingModule,
+        CommonModule,
+        AuthModule,
+    ],
+    providers: [
+        AuthGuard,
+        {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+        {provide: HTTP_INTERCEPTORS, useClass: RefreshTokenInterceptor, multi: true }
+    ],
+    bootstrap: [
+        AppComponent
+    ]
 })
 export class AppModule { }
