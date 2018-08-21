@@ -23,10 +23,10 @@ export class CadAtividadeComponent implements OnInit {
   ) {}
 
   listAtividade = function() {
-      this.http.get('http://localhost:8000/org/atividade/index').subscribe(
+      this.http.get('http://sciec.test/org/event/activity/index').subscribe(
           (res: Response) => {
               this.atividades = res.json();
-              
+              console.log(res);
           }
       );
   };
@@ -44,16 +44,16 @@ export class CadAtividadeComponent implements OnInit {
           'type_activity_id': atividade.type_activity_id,
           'events_id': atividade.events_id,
       };
-          this.http.post('http://localhost:8000/org/event/activity/store', this.atividadeObj).subscribe((res: Response) => {
+          this.http.post('http://sciec.test/org/event/activity/store', this.atividadeObj).subscribe(
+              (res: Response) => {
               console.log(res);
               this.listAtividade();
-              this.router.navigate(['/atividades']);
+              this.router.navigate(['/eventos']);
           });
   };
 
   ngOnInit() {
-      this.listAtividade();
-     // this.listInstitutions();
+      this.listAtividade();    
 
   }
 
