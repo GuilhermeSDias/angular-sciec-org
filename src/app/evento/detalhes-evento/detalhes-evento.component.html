@@ -6,6 +6,7 @@
                     <div class="header">
                         <h4 class="title">{{dtevents.data.nome}}</h4>
                         <p class="category">{{dtevents.data.descricao}}</p>
+                        <a [routerLink]="['/cad-atividade']" class="btn waves-effect green right"><i class="material-icons left">add_circle</i>Cadastrar Atividade</a>
                     </div>                    
                     <div class="content">
                         <div class="card">
@@ -32,41 +33,8 @@
                                 <li>
                                         <p class="category">Coordenador:</p><p>{{dtevents.data.coordenador}}</p>
                                 </li>                                                                
-                            </ul>
-                            <!-- <table class="table">
-                                <thead>
-                                <tr>
-                                    <th scope="col">nome</th>
-                                    <th scope="col">descricao</th>
-                                    <th scope="col">local</th>
-                                    <th scope="col">data inicio</th>
-                                    <th scope="col">data conclusao</th>
-                                    <th scope="col">situacao</th>
-                                    <th scope="col">status</th>
-                                    <th scope="col">coordenador</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>{{dtevents.data.nome}}</td>
-                                    <td>{{dtevents.data.descricao}}</td>
-                                    <td>{{dtevents.data.local}}</td>
-                                    <td>{{dtevents.data.data_inicio}}</td>
-                                    <td>{{dtevents.data.data_conclusao}}</td>
-                                    <td>{{dtevents.data.situacao}}</td>
-                                    <td>{{dtevents.data.status}}</td>
-                                    <td>{{dtevents.data.coordenador}}</td>
-                                </tr>
-                                </tbody>
-                            </table> -->
-                    </div>    
-                    <!-- <form id = "formDelEvent" name = "formDelEvent" #upEvent = "ngForm" (ngSubmit) = "deleteEvent(deleteEvent.value)">
-                        
-                                    <input id="status" type="hidden" name="status" required class="validate" [(ngModel)] = "0" ngModel>
-                                    <button type="submit" class="btn-floating waves-light red right" value="Salvar"><i class="material-icons">delete</i></button>
-
-                    </form> -->
-                  
+                            </ul>                        
+                    </div>                                      
                         <a (click) = "deleteEvent(dtevents.data.id)" class="btn-floating waves-light red right"><i class="material-icons">delete</i></a>
                         <a [routerLink]="['/edit-evento', dtevents.data.id]" class="btn-floating waves-light blue right"><i class="material-icons">edit</i></a>
                 </div>
