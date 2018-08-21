@@ -16,8 +16,10 @@
                                           class="material-icons left">event</i>Ver Evento</a>
                                   <div class="card-content">
                                       <p>{{event.descricao}}</p>
+                                      <p>Status: {{event.status}}</p>
                                   </div>                                    
-                              </div>                                                                           
+                              </div>
+                              <a (click) = "activeEvent(event.data.id)" class="btn-floating waves-light red right"><i class="material-icons">settings_power</i></a>                                                                           
                           </div>                                                                             
                       </div>
                   </div>

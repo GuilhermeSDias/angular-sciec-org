@@ -58,8 +58,6 @@ export class DetalhesEventoComponent implements OnInit {
             });
             this.router.navigate(['/eventos']);           
           };
-      
-      
 
   ngOnInit() {
       this.listDetalhesEvent();

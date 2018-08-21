@@ -12,8 +12,8 @@ export class GerenciarEventosComponent implements OnInit {
   isLoggedIn = true;
   errorCredentiasl = false;
   eventObj: object = {};
-  dteventObj: object = {};
   events;
+  dtevents;
   id:number;
 
   constructor(
@@ -36,6 +36,18 @@ export class GerenciarEventosComponent implements OnInit {
       );
 
   };
+
+  listDetalhesEvent = function() {
+    let id = +this.route.snapshot.paramMap.get('id');
+    this.http.get('http://sciec.test/org/event/show/'+id).subscribe(
+        (res: Response) => {
+            this.dtevents = res.json();
+            console.log(this.dtevents.data);
+        }
+
+    );
+
+};
 
   activeEvent = function(dtevents) {
     this.dteventObj = {
