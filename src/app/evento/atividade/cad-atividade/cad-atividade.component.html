@@ -7,7 +7,7 @@
                         <h4 class="title">Cadastro de Atividades</h4>
                     </div>
                     <div class="content">
-                        <form id = "formNewEvent" name = "formNewEvent" #eventData = "ngForm" (ngSubmit) = "addNewEvent(eventData.value)">
+                        <form id = "formNewAtividade" name = "formNewAtividade" #atividadeData = "ngForm" (ngSubmit) = "addNewAtividade(atividadeData.value)">
                             <div class="container-fluid">
                                 <div class="row">
                                     <div class="col s12">
@@ -16,38 +16,59 @@
                                                     <div class="row">
                                                         <div class="input-field col s12">
                                                             <i class="material-icons prefix">event</i>
-                                                            <input id="icon_prefix" type="text" class="validate" ngModel>
+                                                            <input id="icon_prefix" type="text" name="nome" required class="form-control" ngModel>
                                                             <label for="icon_prefix">Nome</label>
-                                                        </div>
-                                                        <div class="input-field col s12">
-                                                            <i class="material-icons prefix">description</i>
-                                                            <input id="icon_description" type="text" class="validate" ngModel>
-                                                            <label for="icon_description">Descrição</label>
-                                                        </div>
-                                                        <div class="input-field col s12">
-                                                            <i class="material-icons prefix">location_on</i>
-                                                            <input id="icon_local" type="tel" class="validate" ngModel>
-                                                            <label for="icon_local">Local</label>
-                                                        </div>
-                                                        <div class="col s6">
-                                                            <i class="material-icons left">today</i><label for="icon_dt-conclusao">Data de Inicio</label>
-                                                            <input id="icon_dt-inicio" type="datetime-local" class="validate" ngModel>
-                                                        </div>
-                                                        <div class="col s6">
-                                                            <i class="material-icons left">today</i><label for="icon_dt-conclusao">Data de Conclusão</label>
-                                                            <input id="icon_dt-conclusao" type="datetime-local" class="validate" ngModel>
-                                                        </div>
-                                                        <div class="input-field col s12">
-                                                            <i class="material-icons prefix">access_time</i>
-                                                            <input id="icon_local" type="tel" class="validate" ngModel>
-                                                            <label for="icon_local">Quantidade de Horas</label>
                                                         </div>
 
                                                         <div class="input-field col s12">
-                                                            <i class="material-icons prefix">group</i>
-                                                            <input id="icon_local" type="tel" class="validate" ngModel>
-                                                            <label for="icon_local">Número de Vagas</label>
+                                                            <i class="material-icons prefix">description</i>
+                                                            <input id="icon_description" type="text" name="descricao" required class="validate" ngModel>
+                                                            <label for="icon_description">Descrição</label>
                                                         </div>
+
+                                                        <div class="input-field col s12">
+                                                            <i class="material-icons prefix">location_on</i>
+                                                            <input id="icon_local" type="tel" name="local" required class="validate" ngModel>
+                                                            <label for="icon_local">Local</label>
+                                                        </div>
+
+                                                        <div class="col s6">
+                                                            <i class="material-icons left">today</i><label for="icon_dt-conclusao">Data de Inicio</label>
+                                                            <input id="icon_dt-inicio" type="datetime-local" required name="data_inicio" class="validate" ngModel>
+                                                        </div>
+
+                                                        <div class="col s6">
+                                                            <i class="material-icons left">today</i><label for="icon_dt-conclusao">Data de Conclusão</label>
+                                                            <input id="icon_dt-conclusao" type="datetime-local" required name="data_conclusao" class="validate" ngModel>
+                                                        </div>
+
+                                                        <div class="input-field col s12">
+                                                            <i class="material-icons prefix">location_on</i>
+                                                            <input id="icon_local" type="tel" name="horas" required class="validate" ngModel>
+                                                            <label for="icon_local">Quantidade de Horas</label>
+                                                        </div>
+
+
+                                                        <div class="input-field col s12">
+                                                            <i class="material-icons prefix">location_on</i>
+                                                            <input id="icon_local" type="tel" name="qtd_inscritos" required class="validate" ngModel>
+                                                            <label for="icon_local">Quantidade de Inscritos</label>
+                                                        </div>
+
+                                                        <div class="col s6">
+                                                            <i class="material-icons left">priority_high</i><label for="icon_status">Status</label>
+                                                            <input id="icon_status" type="text" name="status" required class="validate" ngModel>
+                                                        </div>  
+
+                                                        <div class="col s6">
+                                                            <i class="material-icons left">priority_high</i><label for="icon_status">Tipo de Atividade</label>
+                                                            <input id="icon_status" type="text" name="type_activity_id" required class="validate" ngModel>
+                                                        </div>  
+
+                                                        <div class="col s6">
+                                                            <i class="material-icons left">priority_high</i><label for="icon_status">Evento</label>
+                                                            <input id="icon_status" type="text" name="events_id" required class="validate" ngModel>
+                                                        </div> 
 
                                                     </div>
                                             </div>
@@ -55,7 +76,7 @@
                                     </div>
                                 </div>
                                 <div class="col s12 text-right">
-                                    <input type="submit" routerLink="/cad-atividade" class="waves-effect waves-light btn green" value="Cadastrar">
+                                    <button type="submit" class="waves-effect waves-light btn green" value="Cadastrar"><i class="material-icons left">save</i>Cadastrar</button>
                                 </div>
                             </div>
                         </form>
