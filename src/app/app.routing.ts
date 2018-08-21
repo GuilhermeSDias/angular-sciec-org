@@ -1,3 +1,4 @@
+import { GerenciarEventosComponent } from './evento/gerenciar-eventos/gerenciar-eventos.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
@@ -33,6 +34,7 @@ import { UpdateEventComponent } from './evento/update-event/update-event.compone
             { path: 'delete-evento/:id',        component: DetalhesEventoComponent, canActivate: [AuthGuard] },
             { path: 'detalhes-evento/:id',        component: DetalhesEventoComponent, canActivate: [AuthGuard] },
             { path: 'atividade',        component: AtividadeComponent, canActivate: [AuthGuard] },
+            { path: 'gerenciar-eventos', component: GerenciarEventosComponent, canActivate: [AuthGuard]},
             { path: 'cad-atividade',        component: CadAtividadeComponent, canActivate: [AuthGuard] },
             { path: '',          redirectTo: 'eventos', pathMatch: 'full', canActivate: [AuthGuard] }
             

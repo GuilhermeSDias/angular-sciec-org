@@ -1,0 +1,28 @@
+<div class="main-content" xmlns:height="http://www.w3.org/1999/xhtml">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="header">
+                      <h4 class="title">Eventos</h4>
+                      <p class="category">Lista de eventos</p>
+                  </div>
+                  <div class="content">
+                      <div class="row">
+                          <div class="col-md-4" *ngFor="let event of events.data">
+                              <div class="card" style="height: 15em">
+                                  <div class="h4 text-center">{{event.nome}}</div>
+                                  <a [routerLink]="['/detalhes-evento', event.id]" class="waves-effect waves-light btn green col s12"><i
+                                          class="material-icons left">event</i>Ver Evento</a>
+                                  <div class="card-content">
+                                      <p>{{event.descricao}}</p>
+                                  </div>                                    
+                              </div>                                                                           
+                          </div>                                                                             
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
