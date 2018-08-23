@@ -13,55 +13,119 @@
                                 <div class="col s12">
                                         <div class="card" style="height: auto">
                                                     <div class="row">
-                                                        <div class="input-field col s12">
+                                                        <div class="form-group input-field col s12" [ngClass]="{'has-error': !name.valid && (name.dirty || name.touched)}">
                                                             <i class="material-icons prefix">event</i>
-                                                            <input id="icon_prefix" type="text" name="nome" required class="form-control" ngModel>
-                                                            <label for="icon_prefix">Nome</label>
-                                                        </div>
-                                                        <div class="input-field col s12">
+                                                            <input id="icon_nome" type="text" name="nome" class="form-control" #name="ngModel" required ngModel>                                                            
+                                                            <label for="icon_nome" class="control-label">Nome</label>
+                                                            <span class="help-block" *ngIf="name.errors && (name.dirty || name.touched)">
+                                                                    <ul>
+                                                                        <li *ngIf="name.errors.required">
+                                                                          O campo nome é requerido!
+                                                                        </li>
+                                                                    </ul>
+                                                            </span>                                                            
+                                                        </div>                                                                                                                                                                                                                      
+                                                            <div class="form-group input-field col s12" [ngClass]="{'has-error': !descricao.valid && (descricao.dirty || descricao.touched)}">
                                                             <i class="material-icons prefix">description</i>
-                                                            <input id="icon_description" type="text" name="descricao" required class="validate" ngModel>
-                                                            <label for="icon_description">Descrição</label>
+                                                            <input id="icon_description" type="text" name="descricao" class="form-control" #descricao="ngModel" required ngModel>
+                                                            <label for="icon_description" class="control-label">Descrição</label>
+                                                            <span class="help-block" *ngIf="descricao.errors && (descricao.dirty || descricao.touched)">
+                                                                    <ul>
+                                                                        <li *ngIf="descricao.errors.required">
+                                                                          O campo descrição é requerido!
+                                                                        </li>
+                                                                    </ul>
+                                                            </span>
+
                                                         </div>
-                                                        <div class="input-field col s12">
+                                                        <div class="form-group input-field col s12" [ngClass]="{'has-error': !local.valid && (local.dirty || local.touched)}">
                                                             <i class="material-icons prefix">location_on</i>
-                                                            <input id="icon_local" type="tel" name="local" required class="validate" ngModel>
-                                                            <label for="icon_local">Local</label>
+                                                            <input id="icon_local" type="tel" name="local" required class="form-control" #local="ngModel" ngModel>
+                                                            <label for="icon_local" class="control-label">Local</label>
+                                                            <span class="help-block" *ngIf="local.errors && (local.dirty || local.touched)">
+                                                                    <ul>
+                                                                        <li *ngIf="local.errors.required">
+                                                                          O campo local é requerido!
+                                                                        </li>
+                                                                    </ul>
+                                                            </span>
                                                         </div>
-                                                        <div class="col s6">
-                                                            <i class="material-icons left">today</i><label for="icon_dt-conclusao">Data de Inicio</label>
-                                                            <input id="icon_dt-inicio" type="datetime-local" required name="data_inicio" class="validate" ngModel>
+                                                        <div class="form-group col s6" [ngClass]="{'has-error': !data_inicio.valid && (data_inicio.dirty || data_inicio.touched)}">
+                                                            <i class="material-icons left">today</i><label for="icon_dt-inicio" class="control-label">Data de Inicio</label>
+                                                            <input id="icon_dt-inicio" type="datetime-local" required name="data_inicio" class="form-control" #data_inicio="ngModel" required ngModel>
+                                                            <span class="help-block" *ngIf="data_inicio.errors && (data_inicio.dirty || data_inicio.touched)">
+                                                                    <ul>
+                                                                        <li *ngIf="data_inicio.errors.required">
+                                                                          O campo data de início é requerido!
+                                                                        </li>
+                                                                    </ul>
+                                                            </span>
                                                         </div>
-                                                        <div class="col s6">
-                                                            <i class="material-icons left">today</i><label for="icon_dt-conclusao">Data de Conclusão</label>
-                                                            <input id="icon_dt-conclusao" type="datetime-local" required name="data_conclusao" class="validate" ngModel>
+                                                        <div class="form-group col s6" [ngClass]="{'has-error': !data_conclusao.valid && (data_conclusao.dirty || data_conclusao.touched)}">
+                                                                <i class="material-icons left">today</i><label for="icon_dt-conclusao" class="control-label">Data de Inicio</label>
+                                                                <input id="icon_dt-conclusao" type="datetime-local" required name="data_conclusao" class="form-control" #data_conclusao="ngModel" required ngModel>
+                                                                <span class="help-block" *ngIf="data_conclusao.errors && (data_inicio.dirty || data_conclusao.touched)">
+                                                                        <ul>
+                                                                            <li *ngIf="data_conclusao.errors.required">
+                                                                              O campo data de conclusão é requerido!
+                                                                            </li>
+                                                                        </ul>
+                                                                </span>
+                                                            </div>
+                                                            <div class="form-group col s6" [ngClass]="{'has-error': !situacao.valid && (situacao.dirty || situacao.touched)}">
+                                                            <i class="material-icons left">info</i><label for="icon_situacao" class="control-label">Situação</label>
+                                                            <input id="icon_situacao" type="text" required name="situacao" class="form-control" #situacao="ngModel" required ngModel>
+                                                            <span class="help-block" *ngIf="situacao.errors && (situacao.dirty || situacao.touched)">
+                                                                    <ul>
+                                                                        <li *ngIf="situacao.errors.required">
+                                                                          O campo situação é requerido!
+                                                                        </li>
+                                                                    </ul>
+                                                            </span>
                                                         </div>
-                                                        <div class="col s6">
-                                                            <i class="material-icons left">info</i><label for="icon_situacao">Situação</label>
-                                                            <input id="icon_situacao" type="text" required name="situacao" class="validate" ngModel>
-                                                        </div>
-                                                        <div class="col s6">
-                                                            <i class="material-icons left">priority_high</i><label for="icon_status">Status</label>
-                                                            <input id="icon_status" type="text" name="status" required class="validate" ngModel>
+                                                        <div class="form-group col s6" [ngClass]="{'has-error': !status.valid && (status.dirty || status.touched)}">
+                                                            <i class="material-icons left">priority_high</i><label for="icon_status" class="control-label">Status</label>
+                                                            <input id="icon_status" type="text" name="status" class="form-control" #status="ngModel" required ngModel>
+                                                            <span class="help-block" *ngIf="status.errors && (status.dirty || status.touched)">
+                                                                    <ul>
+                                                                        <li *ngIf="status.errors.required">
+                                                                          O campo status é requerido!
+                                                                        </li>
+                                                                    </ul>
+                                                            </span>
                                                         </div>                                                        
-                                                        <div class=" col s12">
-                                                            <i class="material-icons prefix">school</i><label>Instituição</label>
-                                                        <select class="browser-default validate" name="institutions_id" required ngModel>
+                                                        <div class="form-group col s12" [ngClass]="{'has-error': !institutions_id.valid && (institutions_id.dirty || institutions_id.touched)}">
+                                                            <i class="material-icons prefix">school</i><label for="" class="control-label">Instituição</label>
+                                                        <select class="browser-default form-control" name="institutions_id" #institutions_id="ngModel" required ngModel>
                                                             <option value="" disabled selected>Escola a Instituição</option>                                        
                                                             <option *ngFor="let institution of institution.data" value="{{institution.id}}">{{institution.nome}}</option> 
-                                                        </select>
+                                                            <span class="help-block" *ngIf="institutions_id.errors && (institutions_id.dirty || institutions_id.touched)">
+                                                                    <ul>
+                                                                        <li *ngIf="institutions_id.errors.required">
+                                                                          O campo instituição é requerido!
+                                                                        </li>
+                                                                    </ul>
+                                                            </span>
+                                                        </select>                                                        
                                                         </div>
-                                                        <div class="input-field col s12">
-                                                            <i class="material-icons prefix">person</i>
-                                                            <input id="icon_coordenador" type="text" name="coordenador" required class="validate" ngModel>
-                                                            <label for="icon_coordenador">Coordenador</label>
-                                                        </div>
+                                                        <div class="form-group input-field col s12" [ngClass]="{'has-error': !coordenador.valid && (coordenador.dirty || coordenador.touched)}">
+                                                                <i class="material-icons prefix">person</i>
+                                                                <input id="icon_coordenador" type="tel" name="coordenador" required class="form-control" #coordenador="ngModel" ngModel>
+                                                                <label for="icon_coordenador" class="control-label">Coordenador</label>
+                                                                <span class="help-block" *ngIf="coordenador.errors && (coordenador.dirty || coordenador.touched)">
+                                                                        <ul>
+                                                                            <li *ngIf="coordenador.errors.required">
+                                                                              O campo coordenador é requerido!
+                                                                            </li>
+                                                                        </ul>
+                                                                </span>
+                                                            </div>
                                                     </div>
                                         </div>
                                 </div>
                             </div>
                             <div class="col s12 text-right">
-                                <button type="submit" class="waves-effect waves-light btn green" value="Cadastrar"><i class="material-icons left">save</i>Cadastrar</button>
+                                <button type="submit" class="waves-effect waves-light btn green" [disabled]="!cadEventData.valid" value="Cadastrar"><i class="material-icons left">save</i>Cadastrar</button>
                             </div>
                         </div>
                         </form>
