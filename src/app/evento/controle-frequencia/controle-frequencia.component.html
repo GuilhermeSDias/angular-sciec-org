@@ -22,12 +22,12 @@
                                         <th class="text-center">Presença</th>
                                         <th class="text-center">Mover para Lista de Espera</th>
                                     </tr>
-                                    </thead>
+                                    </thead> 
                                     <tbody>
-                                    <tr>
-                                        <td>Rômulo Oliveira</td>
-                                        <td>12345678912</td>
-                                        <td>romulormos@gmail.com</td>
+                                    <tr *ngFor="let user of users.data">
+                                        <td>{{user.name}}</td>
+                                        <td>{{user.cpf}}</td>
+                                        <td>{{user.email}}</td>
                                         <td>
                                             <div class="checkbox-circle center">
                                                 <input id="checkbox1" type="checkbox">
@@ -40,24 +40,7 @@
                                                 <i class="material-icons">keyboard_arrow_down</i>
                                             </div>
                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Guilherme Dias</td>
-                                        <td>12345678912</td>
-                                        <td>guilhermedude.7@gmail.com</td>
-                                        <td>
-                                            <div class="checkbox-circle center">
-                                                <input id="checkbox2" type="checkbox">
-                                                <label for="checkbox2">
-                                                </label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center">
-                                                <i class="material-icons">keyboard_arrow_down</i>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    </tr>                                
                                     <tfoot>
                                     <tr>
                                         <th class="text-center">Nome</th>
@@ -82,34 +65,24 @@
                                     <th class="text-center">Mover para Controle de Frequência</th>
                                 </tr>
                                 </thead>
-                                <tbody>
-                                <tr>
-                                    <td>Rômulo Oliveira</td>
-                                    <td>12345678912</td>
-                                    <td>romulormos@gmail.com</td>
-                                    <td>
-                                        <div class="text-center">
-                                            <i class="material-icons">keyboard_arrow_up</i>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Guilherme Dias</td>
-                                    <td>12345678912</td>
-                                    <td>guilhermedude.7@gmail.com</td>
-                                    <td>
-                                        <div class="text-center">
-                                            <i class="material-icons center">keyboard_arrow_up</i>
-                                        </div>
-                                    </td>
-                                </tr>
+                                <tbody>                                
+                                <tr *ngFor="let user of users.data">
+                                                <td>{{user.name}}</td>
+                                                <td>{{user.cpf}}</td>
+                                                <td>{{user.email}}</td>
+                                                <td>    
+                                                        <div class="text-center">
+                                                            <i class="material-icons">keyboard_arrow_up</i>
+                                                        </div>
+                                                </td>
+                                </tr>                                
                                 <tfoot>
                                 <tr>
                                     <th class="text-center">Nome</th>
                                     <th class="text-center">CPF</th>
                                     <th class="text-center">e-mail</th>
                                     <th class="text-center">Mover para Controle de Frequência</th>
-                                </tr>
+                                </tr>                                
                                 </tfoot>
                             </table>
                         </div>
