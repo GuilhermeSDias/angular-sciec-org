@@ -20,7 +20,7 @@
                                                             <span class="help-block" *ngIf="name.errors && (name.dirty || name.touched)">
                                                                     <ul>
                                                                         <li *ngIf="name.errors.required">
-                                                                          O campo nome é requerido!
+                                                                          {{messageError.message.nome[0]}}
                                                                         </li>
                                                                     </ul>
                                                             </span>                                                            
@@ -32,7 +32,7 @@
                                                             <span class="help-block" *ngIf="descricao.errors && (descricao.dirty || descricao.touched)">
                                                                     <ul>
                                                                         <li *ngIf="descricao.errors.required">
-                                                                          O campo descrição é requerido!
+                                                                            {{messageError.message.descricao[0]}}
                                                                         </li>
                                                                     </ul>
                                                             </span>
@@ -45,7 +45,7 @@
                                                             <span class="help-block" *ngIf="local.errors && (local.dirty || local.touched)">
                                                                     <ul>
                                                                         <li *ngIf="local.errors.required">
-                                                                          O campo local é requerido!
+                                                                            {{messageError.message.local[0]}}
                                                                         </li>
                                                                     </ul>
                                                             </span>
@@ -56,7 +56,7 @@
                                                             <span class="help-block" *ngIf="data_inicio.errors && (data_inicio.dirty || data_inicio.touched)">
                                                                     <ul>
                                                                         <li *ngIf="data_inicio.errors.required">
-                                                                          O campo data de início é requerido!
+                                                                            {{messageError.message.data_inicio[0]}}
                                                                         </li>
                                                                     </ul>
                                                             </span>
@@ -67,7 +67,7 @@
                                                                 <span class="help-block" *ngIf="data_conclusao.errors && (data_inicio.dirty || data_conclusao.touched)">
                                                                         <ul>
                                                                             <li *ngIf="data_conclusao.errors.required">
-                                                                              O campo data de conclusão é requerido!
+                                                                                {{messageError.message.data_conclusao[0]}}
                                                                             </li>
                                                                         </ul>
                                                                 </span>
@@ -83,7 +83,7 @@
                                                             <span class="help-block" *ngIf="situacao.errors && (situacao.dirty || situacao.touched)">
                                                                     <ul>
                                                                         <li *ngIf="situacao.errors.required">
-                                                                          O campo situação é requerido!
+                                                                            {{messageError.message.situacao[0]}}
                                                                         </li>
                                                                     </ul>
                                                             </span>
@@ -98,7 +98,7 @@
                                                             <span class="help-block" *ngIf="status.errors && (status.dirty || status.touched)">
                                                                     <ul>
                                                                         <li *ngIf="status.errors.required">
-                                                                          O campo status é requerido!
+                                                                            {{messageError.message.status[0]}}
                                                                         </li>
                                                                     </ul>
                                                             </span>
@@ -111,7 +111,7 @@
                                                             <span class="help-block" *ngIf="institutions_id.errors && (institutions_id.dirty || institutions_id.touched)">
                                                                     <ul>
                                                                         <li *ngIf="institutions_id.errors.required">
-                                                                          O campo instituição é requerido!
+                                                                            {{messageError.message.instituicao[0]}}
                                                                         </li>
                                                                     </ul>
                                                             </span>
@@ -124,7 +124,7 @@
                                                                 <span class="help-block" *ngIf="coordenador.errors && (coordenador.dirty || coordenador.touched)">
                                                                         <ul>
                                                                             <li *ngIf="coordenador.errors.required">
-                                                                              O campo coordenador é requerido!
+                                                                                {{messageError.message.coordenador[0]}}
                                                                             </li>
                                                                         </ul>
                                                                 </span>
