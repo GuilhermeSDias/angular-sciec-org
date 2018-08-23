@@ -98,52 +98,41 @@
                                                                     </ul>
                                                             </span>
                                                         </div>
-                                                            <!-- <div class="form-group col s6" [ngClass]="{'has-error': !type_activity_id.valid && (type_activity_id.dirty || type_activity_id.touched)}">
+                                                            <div class="form-group col s6" [ngClass]="{'has-error': !type_activity_id.valid && (type_activity_id.dirty || type_activity_id.touched)}">
                                                                     <i class="material-icons prefix">event</i><label for="" class="control-label">Tipo de Atividade</label>
                                                                 <select class="browser-default form-control" name="type_activity_id" #type_activity_id="ngModel" required ngModel>
                                                                     <option value="" disabled selected>Escolha o Tipo de Atividade</option>                                        
-                                                                    <option *ngFor="let type of typeActivity.data" value="{{type.id}}">{{type.nome}}</option> 
-                                                                    <span class="help-block" *ngIf="type_activity_id.errors && (type_activity_id.dirty || type_activity_id.touched)">
-                                                                            <ul>
-                                                                                <li *ngIf="type_activity_id.errors.required">
-                                                                                  O campo tipo de atividade é requerido!
-                                                                                </li>
-                                                                            </ul>
-                                                                    </span>
-                                                                </select>                                                        
-                                                                </div> -->
-                                                                <!-- <div class="form-group col s6" [ngClass]="{'has-error': !evento.valid && (evento.dirty || evento.touched)}">
-                                                                        <i class="material-icons prefix">event</i><label for="" class="control-label">Evento</label>
-                                                                    <select class="browser-default form-control" name="evento" #evento="ngModel" required ngModel>
-                                                                        <option value="" disabled selected>Escolha o Evento</option>                                        
-                                                                        <option *ngFor="let event of events.data" value="{{event.id}}">{{event.nome}}</option>                                 
-                                                                    </select>                                                        
-                                                                    </div> -->
-                                                            <div class="form-group col s6" [ngClass]="{'has-error': !type_activity_id.valid && (type_activity_id.dirty || type_activity_id.touched)}">
-                                                            <i class="material-icons left">priority_high</i><label for="icon_type_activity" class="control-label">Tipo de Atividade</label>
-                                                            <input id="icon_type_activity" type="text" name="type_activity_id" required class="form-control" #type_activity_id="ngModel" ngModel>
-                                                            <span class="help-block" *ngIf="type_activity_id.errors && (type_activity_id.dirty || type_activity_id.touched)">
+                                                                    <option *ngFor="let type of typeActivity.data" value="{{type.id}}">{{type.nome}}</option>                                                                     
+                                                                </select>
+                                                                <span class="help-block" *ngIf="type_activity_id.errors && (type_activity_id.dirty || type_activity_id.touched)">
                                                                     <ul>
                                                                         <li *ngIf="type_activity_id.errors.required">
                                                                           O campo tipo de atividade é requerido!
                                                                         </li>
                                                                     </ul>
                                                             </span>
-                                                        </div>
-                                                        <div class="form-group col s6" [ngClass]="{'has-error': !events_id.valid && (events_id.dirty || events_id.touched)}">
-                                                                <i class="material-icons left">event</i><label for="icon_event_id" class="control-label">Evento</label>
-                                                                <input id="events_id" type="text" name="events_id" required class="form-control" #events_id="ngModel" ngModel>
-                                                                <span class="help-block" *ngIf="events_id.errors && (events_id.dirty || events_id.touched)">
-                                                                        <ul>
-                                                                            <li *ngIf="events_id.errors.required">
-                                                                              O campo evento é requerido!
-                                                                            </li>
-                                                                        </ul>
-                                                                </span>
-                                                            </div>                                                       
-                                                            <div class="form-group col s12" [ngClass]="{'has-error': !status.valid && (status.dirty || status.touched)}">
+                                                                </div>
+                                                                <div class="form-group col s6" [ngClass]="{'has-error': !events_id.valid && (events_id.dirty || events_id.touched)}">
+                                                                        <i class="material-icons prefix">event</i><label class="control-label">Evento</label>
+                                                                    <select class="browser-default form-control" name="events_id" #events_id="ngModel" required ngModel>
+                                                                        <option value="" disabled selected>Escolha o Evento</option>                                        
+                                                                        <option *ngFor="let event of events.data" value="{{event.id}}">{{event.nome}}</option>
+                                                                    </select>  
+                                                                    <span class="help-block" *ngIf="events_id.errors && (events_id.dirty || events_id.touched)">
+                                                                    <ul>
+                                                                        <li *ngIf="events_id.errors.required">
+                                                                          O campo evento é requerido!
+                                                                        </li>
+                                                                    </ul>
+                                                            </span>                                                      
+                                                                    </div>                                                                                                                    
+                                                                <div class="form-group col s12" [ngClass]="{'has-error': !status.valid && (status.dirty || status.touched)}">
                                                                     <i class="material-icons left">priority_high</i><label for="icon_status" class="control-label">Status</label>
-                                                                    <input id="icon_status" type="text" name="status" class="form-control" #status="ngModel" required ngModel>
+                                                                    <select class="browser-default form-control" name="status" #status="ngModel" required ngModel>
+                                                                        <option value="" disabled selected>Escolha o Status</option>                                        
+                                                                        <option value="1">Ativado</option>
+                                                                        <option value="0">Desativado</option>
+                                                                    </select>
                                                                     <span class="help-block" *ngIf="status.errors && (status.dirty || status.touched)">
                                                                             <ul>
                                                                                 <li *ngIf="status.errors.required">
@@ -151,14 +140,14 @@
                                                                                 </li>
                                                                             </ul>
                                                                     </span>
-                                                                </div>  
+                                                                </div>
                                                     </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col s12 text-right">
-                                    <button type="submit" class="waves-effect waves-light btn green" value="Cadastrar"><i class="material-icons left">save</i>Cadastrar</button>
+                                    <button type="submit" class="waves-effect waves-light btn green" [disabled]="!atividadeData.valid" value="Cadastrar"><i class="material-icons left">save</i>Cadastrar</button>
                                 </div>
                             </div>
                         </form>
