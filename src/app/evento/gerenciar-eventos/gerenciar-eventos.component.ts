@@ -13,7 +13,6 @@ export class GerenciarEventosComponent implements OnInit {
   errorCredentiasl = false;
   eventObj: object = {};
   events;
-  dtevents;
   id:number;
 
   constructor(
@@ -41,8 +40,8 @@ export class GerenciarEventosComponent implements OnInit {
     let id = +this.route.snapshot.paramMap.get('id');
     this.http.get('http://sciec.test/org/event/show/'+id).subscribe(
         (res: Response) => {
-            this.dtevents = res.json();
-            console.log(this.dtevents.data);
+            this.events = res.json();
+            console.log(this.events.data);
         }
 
     );
@@ -50,18 +49,30 @@ export class GerenciarEventosComponent implements OnInit {
 };
 
   activeEvent = function(dtevents) {
-    this.dteventObj = {
+    this.eventObj = {
         'status': 1,
 
     };
     let id = +this.route.snapshot.paramMap.get('id');
-        this.http.post('http://sciec.test/org/event/delete/'+id, this.dteventObj).subscribe(
+        this.http.post('http://sciec.test/org/event/delete/'+id, this.eventObj).subscribe(
             (res: Response) => {
             console.log(res);                
             // this.showEventForm();
-        });
-        this.router.navigate(['/eventos']);           
+        });                  
       };
+
+      deleteEvent = function(dtevents) {
+        this.eventObj = {
+            'status': 0,
+
+        };
+        let id = +this.route.snapshot.paramMap.get('id');
+            this.http.post('http:///org/event/delete/'+id, this.eventObj).subscribe(
+                (res: Response) => {
+                console.log(res);                
+                // this.showEventForm();
+            });                  
+          };
 
   addNewEvent = function(event) {
       this.eventObj = {
