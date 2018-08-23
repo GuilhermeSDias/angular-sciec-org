@@ -14,7 +14,8 @@ export class CadAtividadeComponent implements OnInit {
   upAtividadeObj: object = {};
   atividades = [];
   id: number;
-  institution = [];
+  events = [];
+  typeActivity = [];
 
   constructor(
       private http: Http,
@@ -30,6 +31,22 @@ export class CadAtividadeComponent implements OnInit {
           }
       );
   };
+
+  listEvents = function() {
+    this.http.get('http://sciec.test/org/event/index').subscribe(
+        (res: Response) => {
+            this.events = res.json();
+        }
+    );
+};
+
+listTypeActivity = function() {
+    this.http.get('http://sciec.test/admin/config/type_activity/index').subscribe(
+        (res: Response) => {
+            this.typeActivity = res.json();
+        }
+    );
+};
 
   addNewAtividade = function(atividade) {
       this.atividadeObj = {
@@ -53,7 +70,9 @@ export class CadAtividadeComponent implements OnInit {
   };
 
   ngOnInit() {
-      this.listAtividade();    
+      this.listAtividade();
+      this.listEvents();
+      this.listTypeActivity();
 
   }
 

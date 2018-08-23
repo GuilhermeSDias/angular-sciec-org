@@ -97,7 +97,7 @@
                                                         <div class="form-group col s12" [ngClass]="{'has-error': !institutions_id.valid && (institutions_id.dirty || institutions_id.touched)}">
                                                             <i class="material-icons prefix">school</i><label for="" class="control-label">Instituição</label>
                                                         <select class="browser-default form-control" name="institutions_id" #institutions_id="ngModel" required ngModel>
-                                                            <option value="" disabled selected>Escola a Instituição</option>                                        
+                                                            <option value="" disabled selected>Escolha a Instituição</option>                                        
                                                             <option *ngFor="let institution of institution.data" value="{{institution.id}}">{{institution.nome}}</option> 
                                                             <span class="help-block" *ngIf="institutions_id.errors && (institutions_id.dirty || institutions_id.touched)">
                                                                     <ul>
