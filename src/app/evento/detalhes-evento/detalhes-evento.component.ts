@@ -12,7 +12,7 @@ import 'rxjs/add/operator/toPromise';
 export class DetalhesEventoComponent implements OnInit {
     dteventObj: object = {};
     dtevents;
-    institution;
+    activity;
     id:number;
 
     constructor(
@@ -20,12 +20,12 @@ export class DetalhesEventoComponent implements OnInit {
         private route: ActivatedRoute,
         private router: Router
     ) {
-        console.log(this.route.snapshot.paramMap.get('id'))
+        
     }
 
     listDetalhesEvent = function() {
         let id = +this.route.snapshot.paramMap.get('id');
-        this.http.get('http://localhost:8000/org/event/show/'+id).subscribe(
+        this.http.get('http://sciec.test/org/event/show/'+id).subscribe(
             (res: Response) => {
                 this.dtevents = res.json();
                 console.log(this.dtevents.data);
@@ -35,12 +35,13 @@ export class DetalhesEventoComponent implements OnInit {
 
     };
 
-    listInstitutions = function() {
-        let id = +this.route.snapshot.paramMap.get('id');
-        this.http.get('http://localhost:8000/admin/config/institution/show/'+id).subscribe(
+    listActivity = function() {
+        // let id = +this.route.snapshot.paramMap.get('id');
+        // this.http.get('http://sciec.test/org/event/activity/show/'+id).subscribe(             
+        this.http.get('http://sciec.test/org/event/activity/index/').subscribe(
             (res: Response) => {
-                this.institution = res.json();
-                console.log(res);
+                this.activity = res.json();
+                console.log(this.activity.data);
             }
         );
     };
@@ -51,7 +52,7 @@ export class DetalhesEventoComponent implements OnInit {
 
         };
         let id = +this.route.snapshot.paramMap.get('id');
-            this.http.post('http://localhost:8000/org/event/delete/'+id, this.dteventObj).subscribe(
+            this.http.post('http://sciec.test/org/event/delete/'+id, this.dteventObj).subscribe(
                 (res: Response) => {
                 console.log(res);                
                 // this.showEventForm();
@@ -61,6 +62,7 @@ export class DetalhesEventoComponent implements OnInit {
 
   ngOnInit() {
       this.listDetalhesEvent();
+      this.listActivity();
   }
 
 }

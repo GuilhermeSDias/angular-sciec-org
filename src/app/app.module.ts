@@ -29,6 +29,7 @@ import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {RefreshTokenInterceptor} from "./interceptors/refresh-token.interceptor";
 import { UpdateEventComponent } from './evento/update-event/update-event.component';
 import { GerenciarEventosComponent } from './evento/gerenciar-eventos/gerenciar-eventos.component';
+import { DestalhesAtividadeComponent } from './evento/atividade/destalhes-atividade/destalhes-atividade.component';
 // import { NewPasswordComponent } from './user/auth/new-password/new-password.component';
 
 @NgModule({
@@ -45,7 +46,8 @@ import { GerenciarEventosComponent } from './evento/gerenciar-eventos/gerenciar-
     AtividadeComponent,
     CadAtividadeComponent,
     UpdateEventComponent,
-    GerenciarEventosComponent
+    GerenciarEventosComponent,
+    DestalhesAtividadeComponent
 
   ],
   imports: [

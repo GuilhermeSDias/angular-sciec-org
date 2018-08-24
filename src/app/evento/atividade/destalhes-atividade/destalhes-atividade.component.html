@@ -1,0 +1,55 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="header">
+                    <ul>
+                        <li>
+                            <h5 class="title right">{{events.data.nome}}</h5>
+                        </li>
+                      <li>
+                          <h4 class="title">{{dtactivity.data.nome}}</h4>
+                          <p class="category">{{dtactivity.data.descricao}}</p>                            
+                      </li>                      
+                    </ul>                                          
+                  </div>                    
+                  <div class="content">
+                      <div class="row">                            
+                      <div class="card">
+                          <ul>
+                              <li>
+                                      <p class="category">Local:</p><p>{{dtactivity.data.local}}</p>
+                              </li>   
+                              <li>
+                                      <p class="category">Data de Início:</p><p>{{dtactivity.data.data_inicio}}</p>
+                              </li>   
+                              <li>
+                                      <p class="category">Data de Conclusão:</p><p>{{dtactivity.data.data_conclusao}}</p>
+                              </li>   
+                              <li>
+                                      <p class="category">Horas:</p><p>{{dtactivity.data.horas}}</p>
+                              </li>   
+                              <li>
+                                <p class="category">Quantidade de Inscritos:</p><p>{{dtactivity.data.qtd_inscritos}}</p>
+                              </li>
+                              <li>
+                                      <p class="category">Status:</p><p>{{dtactivity.data.status}}</p>
+                              </li>   
+                              <li>
+                                      <p class="category">Tipos de Atividades:</p><p>{{dtactivity.data.type_activity_id}}</p>                                      
+                              </li> 
+                              <li>
+                                      <p class="category">Evento:</p><p>{{dtactivity.data.events_id}}</p>
+                              </li>                                                                
+                          </ul>                        
+                  </div>                                                                                     
+              </div>             
+                      <a (click) = "deleteEvent(dtactivity.data.id)" class="btn-floating waves-light red right"><i class="material-icons">delete</i></a>
+                      <a [routerLink]="['/edit-atividade', dtactivity.data.id]" class="btn-floating waves-light blue right"><i class="material-icons">edit</i></a>
+              </div>
+           </div>
+          </div>
+      </div>
+  </div>
+</div>

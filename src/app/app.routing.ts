@@ -15,6 +15,7 @@ import {AtividadeComponent} from "./evento/atividade/atividade.component";
 import {CadAtividadeComponent} from "./evento/atividade/cad-atividade/cad-atividade.component";
 import {AuthGuard} from "./guards/auth.guard";
 import { UpdateEventComponent } from './evento/update-event/update-event.component';
+import { DestalhesAtividadeComponent } from './evento/atividade/destalhes-atividade/destalhes-atividade.component';
 // import {NewPasswordComponent} from "./user/auth/new-password/new-password.component";
 
 
@@ -36,6 +37,7 @@ import { UpdateEventComponent } from './evento/update-event/update-event.compone
             { path: 'atividade',        component: AtividadeComponent, canActivate: [AuthGuard] },
             { path: 'gerenciar-eventos', component: GerenciarEventosComponent, canActivate: [AuthGuard]},
             { path: 'cad-atividade',        component: CadAtividadeComponent, canActivate: [AuthGuard] },
+            { path: 'detalhes-atividade/:id', component: DestalhesAtividadeComponent, canActivate: [AuthGuard]},
             { path: '',          redirectTo: 'eventos', pathMatch: 'full', canActivate: [AuthGuard] }
             
         ])

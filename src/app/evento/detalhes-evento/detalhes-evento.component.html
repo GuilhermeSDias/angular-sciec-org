@@ -9,8 +9,9 @@
                         <a [routerLink]="['/cad-atividade']" class="btn waves-effect green right"><i class="material-icons left">add_circle</i>Cadastrar Atividade</a>
                     </div>                    
                     <div class="content">
+                        <div class="row">                            
                         <div class="card">
-                            <ul>
+                            <ul class="col s6">
                                 <li>
                                         <p class="category">Local:</p><p>{{dtevents.data.local}}</p>
                                 </li>   
@@ -35,6 +36,16 @@
                                 </li>                                                                
                             </ul>                        
                     </div>                                                              
+                    <div class="card col s6">
+                                <div class="header">
+                                                <h4 class="title">Atividades</h4>                                                
+                                            </div>                        
+                                <div class="card" *ngFor="let activities of activity.data">                                                
+                                                        <p>{{activities.nome}}</p><p class="category">{{activities.descricao}}</p>
+                                                        <a [routerLink]="['/detalhes-atividade', activities.id]" class="btn-floating waves-light green right"><i class="material-icons">info</i></a>                                                                                                                               
+                                        </div>                                                        
+                        </div>     
+                </div>             
                         <a (click) = "deleteEvent(dtevents.data.id)" class="btn-floating waves-light red right"><i class="material-icons">delete</i></a>
                         <a [routerLink]="['/edit-evento', dtevents.data.id]" class="btn-floating waves-light blue right"><i class="material-icons">edit</i></a>
                 </div>
