@@ -11,7 +11,7 @@ declare interface RouteInfo {
 }
 export const ROUTES: RouteInfo[] = [
     { path: 'eventos', title: 'Eventos',  icon: 'pe-7s-date', class: '' },
-    { path: 'frequencia', title: 'Frequência',  icon: 'pe-7s-note2', class: '' },
+    { path: 'gerenciar-eventos', title: 'Gerenciar Eventos',  icon: 'pe-7s-config', class: '' },
     { path: 'validar-certificado', title: 'Validar Certificado',  icon:'pe-7s-check', class: '' },
 ];
 

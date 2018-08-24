@@ -54,7 +54,7 @@ export class CadEventoComponent implements OnInit {
                 this.messageError = res.json();
                 console.log( this.messageError);
                 this.listEvent();
-                
+                this.router.navigate(['/eventos']);                
             });
     };
 
