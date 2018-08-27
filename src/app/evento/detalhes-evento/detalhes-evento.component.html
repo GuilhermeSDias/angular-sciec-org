@@ -4,12 +4,18 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="header">
-                                <div class="card-action" *ngIf="dtevents.data.status == 1">
+                                <div class="card-action" *ngIf="dtevents.data.situacao != 3">
+                                                <a (click) = "deleteEvent(dtevents.data.id)" class="btn waves-light blue right"><i class="material-icons left">check_box</i>Concluir Evento</a>                        
+                                </div>
+                                <div class="card-action" *ngIf="dtevents.data.situacao == 3">
+                                                <a class="btn waves-light disabled blue right"><i class="material-icons left">check_box</i>Evento Concluido</a>                        
+                                </div> 
+                                <!-- <div class="card-action" *ngIf="dtevents.data.status == 1">
                                         <a (click) = "deleteEvent(dtevents.data.id)" class="btn waves-light red right"><i class="material-icons left">block</i>Desativar</a>                        
                                 </div>
                                         <div class="card-action" ng *ngIf="dtevents.data.status == 0">
                                         <a (click) = "activeEvent(dtevents.data.id)" class="btn waves-light green right"><i class="material-icons left">check_box</i>Ativar</a>
-                                </div>
+                                </div> -->
                                 <h4 class="title">{{dtevents.data.nome}}</h4>
                                 <p class="category">{{dtevents.data.descricao}}</p>
                                 <a [routerLink]="['/cad-atividade']" class="btn waves-effect green right"><i class="material-icons left">add_circle</i>Cadastrar Atividade</a>                                                                              

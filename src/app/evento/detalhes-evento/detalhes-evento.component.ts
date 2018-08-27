@@ -74,6 +74,19 @@ export class DetalhesEventoComponent implements OnInit {
                 this.router.navigate(['/eventos']);           
               };
 
+              concluiEvent = function(dtevents) {
+                this.dteventObj = {
+                    'status': 3,
+        
+                };
+                let id = +this.route.snapshot.paramMap.get('id');
+                    this.http.post('http://sciec.test/org/event/situacao/'+id, this.dteventObj).subscribe(
+                        (res: Response) => {
+                        console.log(res);                                
+                    this.router.navigate(['/detalhes-evento/'+id]);
+                    });                                      
+                  };
+
   ngOnInit() {
       this.listDetalhesEvent();
       this.listActivity();
