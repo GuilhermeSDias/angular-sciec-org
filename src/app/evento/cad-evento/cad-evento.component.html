@@ -75,9 +75,9 @@
                                                         <div class="form-group col s6" [ngClass]="{'has-error': !situacao.valid && (situacao.dirty || situacao.touched)}">
                                                             <i class="material-icons left">info</i><label for="icon_situacao" class="control-label">Situação</label>
                                                             <select class="browser-default form-control" name="situacao" #situacao="ngModel" required ngModel>
-                                                                <option value="" disabled selected>Escolha o Status</option>                                        
+                                                                <option value="" disabled selected>Escolha a Situação</option>                                        
                                                                 <option value="1">Aberto</option>
-                                                                <option value="2">Em Andamento</option>
+                                                                <option value="2">Fechado</option>
                                                                 <option value="3">Concluido</option>
                                                             </select>
                                                             <span class="help-block" *ngIf="situacao.errors && (situacao.dirty || situacao.touched)">
@@ -134,7 +134,7 @@
                                 </div>
                             </div>
                             <div class="col s12 text-right">
-                                <button type="submit" class="waves-effect waves-light btn green" [disabled]="!cadEventData.valid" value="Cadastrar"><i class="material-icons left">save</i>Cadastrar</button>
+                                <button type="submit"  class="waves-effect waves-light btn green" [disabled]="!cadEventData.valid" value="Cadastrar"><i class="material-icons left">save</i>Cadastrar</button>
                             </div>
                         </div>
                         </form>

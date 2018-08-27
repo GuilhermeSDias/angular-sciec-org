@@ -21,7 +21,7 @@ export class CadEventoComponent implements OnInit {
         private route: ActivatedRoute
     ) {}
 
-    listEvent = function() {
+    listEvent = function() {        
         this.http.get('http://sciec.test/admin/event/index').subscribe(
             (res: Response) => {
                 this.events = res.json();
@@ -50,6 +50,7 @@ export class CadEventoComponent implements OnInit {
             'institutions_id': event.institutions_id,
             'coordenador': event.coordenador,
         };
+            let id = +this.route.snapshot.paramMap.get('id');
             this.http.post('http://sciec.test/org/event/store', this.eventObj).subscribe((res: Response) => {
                 this.messageError = res.json();
                 console.log( this.messageError);

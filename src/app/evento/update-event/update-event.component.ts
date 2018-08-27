@@ -55,7 +55,7 @@ updateEvent = function(upEvent) {
       this.http.post('http://localhost:8000/org/event/update/'+id, this.upeventObj).subscribe((res: Response) => {
           console.log(res);
           this.showEventForm();
-          this.router.navigate(['/eventos']);
+          this.router.navigate(['/detalhes-evento/'+id]);
       });
     };
 

@@ -14,19 +14,41 @@
                             <span class="card-title">{{event.nome}}</span>
                               <p>{{event.descricao}}</p>                              
                             </div>
-                            <div class="card-action" ng *ngIf="event.status == 1">                            
-                            <p class="text-danger" *ngIf="event.status == 0">Desativado</p>
-                            <p class="text-success" *ngIf="event.status == 1">Ativado</p>
+                            <div class="card-action" *ngIf="event.situacao == 1">                            
+                            <p class="text-danger" *ngIf="event.status == 0">Status Desativado</p>
+                            <p class="text-success" *ngIf="event.status == 1">Status Ativado</p>
 
-                            <a (click) = "deleteEvent(events.data.id)" class="btn waves-light red left"><i class="material-icons left">block</i>Desativar</a>
+                            <p class="text-primary" *ngIf="event.situacao == 1">Evento Aberto</p>
+                            <p class="text-muted" *ngIf="event.situacao == 2">Evento Fechado</p>
+                            <p class="text-success" *ngIf="event.situacao == 3">Evento Concluido</p>                           
+                            
+                            <!-- <a (click) = "fecharEvent(events.data.id)" class="btn waves-light red left"><i class="material-icons left">block</i>Fechar</a> -->
                             <a [routerLink]="['/detalhes-evento', event.id]" class="waves-effect waves-light btn green right"><i
                                         class="material-icons left">event</i>Ver Evento</a>
                             </div>
-                            <div class="card-action" ng *ngIf="event.status == 0">                            
-                                <p class="text-danger" *ngIf="event.status == 0">Desativado</p>
-                                <p class="text-success" *ngIf="event.status == 1">Ativado</p>
+                            
+                            <div class="card-action" *ngIf="event.situacao == 2">                            
+                            <p class="text-danger" *ngIf="event.status == 0">Status Desativado</p>
+                            <p class="text-success" *ngIf="event.status == 1">Status Ativado</p>
+
+                            <p class="text-primary" *ngIf="event.situacao == 1">Evento Aberto</p>
+                            <p class="text-muted" *ngIf="event.situacao == 2">Evento Fechado</p>
+                            <p class="text-success" *ngIf="event.situacao == 3">Evento Concluido</p>
                                 
-                                <a (click) = "activeEvent(events.data.id)" class="btn waves-light green left"><i class="material-icons left">check_box</i>Ativar</a>                              
+                            <!-- <a (click) = "activeEvent(event.id)" class="btn waves-light green left"><i class="material-icons left">check_box</i>Ativar</a> -->
+                            <a [routerLink]="['/detalhes-evento', event.id]" class="waves-effect waves-light btn green right"><i
+                                        class="material-icons left">event</i>Ver Evento</a>
+                            </div>
+
+                            <div class="card-action" *ngIf="event.situacao == 3">                            
+                                <p class="text-danger" *ngIf="event.status == 0">Status Desativado</p>
+                                <p class="text-success" *ngIf="event.status == 1">Status Ativado</p>
+    
+                                <p class="text-primary" *ngIf="event.situacao == 1">Evento Aberto</p>
+                                <p class="text-muted" *ngIf="event.situacao == 2">Evento Fechado</p>
+                                <p class="text-success" *ngIf="event.situacao == 3">Evento Concluido</p>                           
+                                
+                                <!-- <a (click) = "fecharEvent(events.data.id)" class="btn waves-light red left"><i class="material-icons left">block</i>Fechar</a> -->
                                 <a [routerLink]="['/detalhes-evento', event.id]" class="waves-effect waves-light btn green right"><i
                                             class="material-icons left">event</i>Ver Evento</a>
                                 </div>
@@ -37,5 +59,5 @@
         </div>
     </div>
 </div>
-  </div>
+</div>
 </div>
